@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* Mode nuit : activé quand <html> a la classe .dark */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
 
@@ -16,7 +19,11 @@
 	}
 
 	body {
-		@apply font-sans text-gray-800 bg-white antialiased;
+		@apply font-sans text-gray-800 bg-white antialiased transition-colors duration-200;
+	}
+
+	html.dark body {
+		@apply bg-slate-900 text-gray-200;
 	}
 
 	h1,
@@ -24,6 +31,37 @@
 	h3,
 	h4 {
 		@apply font-bold leading-tight;
+	}
+
+	/* Respecter l'orientation EXIF des photos (éviter les images à l'envers) */
+	img {
+		image-orientation: from-image;
+	}
+
+	html.dark h1,
+	html.dark h2,
+	html.dark h3,
+	html.dark h4 {
+		@apply text-white;
+	}
+
+	/* Sections et blocs en mode nuit */
+	html.dark .bg-white,
+	html.dark section.bg-white {
+		@apply bg-slate-800 border-slate-700;
+	}
+
+	html.dark .text-gray-700,
+	html.dark .text-gray-600 {
+		@apply text-gray-300;
+	}
+
+	html.dark .bg-gray-50 {
+		@apply bg-slate-800/50;
+	}
+
+	html.dark .bg-\[\#f5f9f5\] {
+		@apply bg-slate-800/70;
 	}
 }
 

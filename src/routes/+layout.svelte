@@ -3,15 +3,21 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { site } from '$lib/content/site';
+	import { themeStore } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
+
+	onMount(() => {
+		themeStore.init();
+	});
 </script>
 
 <svelte:head>
 	<meta name="robots" content="index, follow" />
 	<meta property="og:site_name" content={site.name} />
 	<meta property="og:type" content="website" />
-	<meta name="theme-color" content="#2d6a2d" />
+	<meta name="theme-color" content={$themeStore === 'dark' ? '#0f172a' : '#2d6a2d'} />
 
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
@@ -50,7 +56,7 @@
 	})}</script>`}
 </svelte:head>
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen bg-white dark:bg-slate-900 transition-colors duration-200">
 	<Header />
 	<main class="flex-1">
 		{@render children()}
