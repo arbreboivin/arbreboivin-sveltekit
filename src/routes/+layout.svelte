@@ -22,13 +22,15 @@
 		"email": "ArbreBoivin@gmail.com",
 		"description": "Service d'arbre professionnel et sécuritaire à Portneuf, Saint-Raymond, Pont-Rouge et Québec. Élagage, abattage, plantation, haubanage et urgences 24/7.",
 		"areaServed": [
-			{ "@type": "City", "name": "Portneuf", "addressRegion": "QC", "addressCountry": "CA" },
-			{ "@type": "City", "name": "Saint-Raymond", "addressRegion": "QC", "addressCountry": "CA" },
-			{ "@type": "City", "name": "Pont-Rouge", "addressRegion": "QC", "addressCountry": "CA" },
-			{ "@type": "City", "name": "Québec", "addressRegion": "QC", "addressCountry": "CA" },
-			{ "@type": "City", "name": "Donnacona", "addressRegion": "QC", "addressCountry": "CA" },
-			{ "@type": "City", "name": "Cap-Santé", "addressRegion": "QC", "addressCountry": "CA" }
-		],
+			"Saint-Raymond", "Portneuf", "Pont-Rouge", "Donnacona", "Cap-Santé",
+			"Neuville", "Saint-Basile", "Saint-Marc-des-Carrières", "Saint-Casimir",
+			"Saint-Alban", "Saint-Ubalde", "Saint-Gilbert", "Saint-Léonard-de-Portneuf",
+			"Sainte-Christine-d'Auvergne", "Deschambault-Grondines", "Shannon",
+			"Fossambault-sur-le-Lac", "Lac-Saint-Joseph", "Stoneham-et-Tewkesbury",
+			"Saint-Augustin-de-Desmaures", "L'Ancienne-Lorette", "Val-Bélair",
+			"Québec", "Saint-Émile", "Loretteville", "Sainte-Foy",
+			"Sainte-Brigitte-de-Laval", "Boischatel"
+		].map(name => ({ "@type": "City", "name": name, "addressRegion": "QC", "addressCountry": "CA" })),
 		"hasOfferCatalog": {
 			"@type": "OfferCatalog",
 			"name": "Services d'arbres",

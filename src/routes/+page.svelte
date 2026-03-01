@@ -34,7 +34,16 @@
 			dans toute la région de Portneuf et ses environs. Estimation gratuite sur place.
 		</p>
 		<div class="flex flex-wrap justify-center gap-3">
-			{#each ['Portneuf', 'Saint-Raymond', 'Pont-Rouge', 'Québec', 'Donnacona', 'Cap-Santé', 'Neuville', 'Deschambault-Grondines', 'Saint-Basile', 'Saint-Marc-des-Carrières'] as ville}
+			{#each [
+			'Saint-Raymond', 'Portneuf', 'Pont-Rouge', 'Donnacona', 'Cap-Santé',
+			'Neuville', 'Saint-Basile', 'Saint-Marc-des-Carrières', 'Saint-Casimir',
+			'Saint-Alban', 'Saint-Ubalde', 'Saint-Gilbert', 'Saint-Léonard-de-Portneuf',
+			'Sainte-Christine-d\'Auvergne', 'Deschambault-Grondines', 'Shannon',
+			'Fossambault-sur-le-Lac', 'Lac-Saint-Joseph', 'Stoneham-et-Tewkesbury',
+			'Saint-Augustin-de-Desmaures', 'L\'Ancienne-Lorette', 'Val-Bélair',
+			'Québec', 'Saint-Émile', 'Loretteville', 'Sainte-Foy',
+			'Saint-Félix-de-Valois', 'Sainte-Brigitte-de-Laval', 'Boischatel'
+		] as ville}
 				<span class="rounded-full border-2 border-[#2d6a2d] px-4 py-1.5 text-sm font-semibold text-[#2d6a2d]">
 					{ville}
 				</span>
