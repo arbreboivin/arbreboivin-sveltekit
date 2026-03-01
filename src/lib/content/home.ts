@@ -27,7 +27,7 @@ export const homePage = {
 			{ label: 'Assurance responsabilité 2 000 000 $' },
 			{ label: 'Élagueur certifié' }
 		],
-		videoSrc: '',
+		videoSrc: 'https://res.cloudinary.com/dumhtwfqn/video/upload/v1772349272/tz5xfe1ucb0ptos5tjdw.mp4',
 		slideshow: [
 			{ src: '/photo/image00001.jpeg', alt: 'Élagueur certifié avec casque et tronçonneuse orange' },
 			{ src: '/photo/image00033.jpeg', alt: 'Arboriste en hauteur sur corde dans un arbre' },

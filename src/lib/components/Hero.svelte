@@ -111,10 +111,10 @@
 			<img
 				src={slide.src}
 				alt={slide.alt}
-				class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-				class:opacity-100={i === current}
-				class:opacity-0={i !== current}
-				style={slide.position ? `object-position: ${slide.position}` : undefined}
+			class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+			class:opacity-100={i === current}
+			class:opacity-0={i !== current}
+			style={`image-orientation: from-image;${slide.position ? ` object-position: ${slide.position}` : ''}`}
 				loading={i === 0 ? 'eager' : 'lazy'}
 				fetchpriority={i === 0 ? 'high' : 'auto'}
 			/>
