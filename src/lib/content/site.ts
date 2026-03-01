@@ -14,11 +14,12 @@ export const site = {
 	phoneHref: 'tel:+15149225807',
 	email: 'ArbreBoivin@gmail.com',
 	address: {
-		street: 'À préciser',
-		city: 'Montréal',
+		street: '',
+		city: 'Portneuf, Saint-Raymond, Pont-Rouge, Québec',
 		province: 'QC',
-		postalCode: 'À préciser'
+		postalCode: ''
 	},
+	serviceArea: 'Portneuf • Saint-Raymond • Pont-Rouge • Québec',
 
 	// CTA principal
 	cta: {
@@ -48,7 +49,7 @@ export const site = {
 		defaultTitle: 'Arbre Boivin — Service d\'arbre professionnel et sécuritaire',
 		titleTemplate: '%s | Arbre Boivin',
 		defaultDescription:
-			'Service d\'arbre professionnel et sécuritaire à Montréal. Élagage, abattage, plantation, haubanage, essouchement et urgences 24/7. Élagueur certifié. Assurance responsabilité 2 000 000 $. Estimation gratuite.'
+			'Service d\'arbre professionnel et sécuritaire à Portneuf, Saint-Raymond, Pont-Rouge et Québec. Élagage, abattage, plantation, haubanage, essouchement et urgences 24/7. Élagueur certifié. Assurance responsabilité 2 000 000 $. Estimation gratuite.'
 	}
 };
 

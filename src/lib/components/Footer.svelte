@@ -86,7 +86,7 @@
 					</li>
 					<li class="flex items-start gap-2 text-gray-400">
 						<span class="text-[#4a9c4a] mt-0.5">📍</span>
-						<span>{site.address.city}, {site.address.province}</span>
+						<span>{site.serviceArea}</span>
 					</li>
 					<li class="flex items-start gap-2 text-gray-400">
 						<span class="text-[#4a9c4a] mt-0.5">🕐</span>
