@@ -80,4 +80,54 @@
 	</div>
 </section>
 
+<!-- Section urgence 24/7 -->
+<section class="relative bg-cover bg-center py-14 md:py-20" style="background-image: url('/photo/image00008.jpeg');">
+	<div class="absolute inset-0 bg-black/55"></div>
+	<div class="container-site relative z-10">
+		<div class="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-red-700/90 p-8 md:flex md:gap-8 md:p-10">
+
+			<!-- Texte gauche -->
+			<div class="flex-1 text-white md:pr-6">
+				<div class="mb-4 flex items-center gap-3">
+					<span class="text-2xl">⚠️</span>
+					<h2 class="text-xl font-black md:text-2xl">
+						Service d'urgence 24/7 pour arbres dangereux
+					</h2>
+				</div>
+				<p class="mb-4 text-sm leading-relaxed text-red-100">
+					Les vents violents, la neige lourde ou les orages peuvent fragiliser les arbres et créer
+					des situations à risque. Si un arbre menace de tomber ou qu'une branche devient
+					dangereuse, Arbre Boivin est là pour intervenir rapidement.
+				</p>
+				<p class="mb-5 text-sm leading-relaxed text-red-100">
+					Notre équipe est disponible 24 heures sur 24, 7 jours sur 7, en cas d'urgence causée
+					par les intempéries ou toute autre situation. Nous procédons à l'abattage sécuritaire,
+					au dégagement des débris et à la mise en sécurité de votre terrain.
+				</p>
+				<p class="font-bold italic text-white">
+					Une urgence ? Appelez-nous — on s'occupe du reste.
+				</p>
+			</div>
+
+			<!-- Panneau droit -->
+			<div class="mt-8 flex flex-col items-center justify-center rounded-xl bg-red-100 px-8 py-6 text-center md:mt-0 md:min-w-[220px]">
+				<svg xmlns="http://www.w3.org/2000/svg" class="mb-3 h-10 w-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+				</svg>
+				<p class="mb-1 font-black text-gray-900">Intervention rapide</p>
+				<p class="mb-4 text-xs text-gray-600">Notre équipe d'urgence est prête à intervenir à tout moment</p>
+				<a
+					href="tel:+15149225807"
+					class="flex items-center gap-2 rounded-lg bg-red-600 px-5 py-3 font-black text-white transition hover:bg-red-700"
+				>
+					📞 514-922-5807
+				</a>
+				<a href="/services/urgence" class="mt-3 text-sm font-semibold text-red-700 hover:underline">
+					En savoir plus →
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
 <FullWidthCTA data={homePage.fullWidthCTA} />
