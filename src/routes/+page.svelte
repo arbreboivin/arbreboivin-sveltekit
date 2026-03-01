@@ -22,9 +22,11 @@
 <GoogleReviews />
 <LongTextSection data={homePage.longText} />
 
-<!-- Section zone de service -->
-<section class="relative bg-cover bg-center py-12 md:py-16" style="background-image: url('/photo/image00008.jpeg');">
-	<div class="absolute inset-0 bg-black/55"></div>
+<!-- Sections zone de service + urgence sur un seul fond continu -->
+<div class="relative bg-cover bg-center" style="background-image: url('/photo/image00008.jpeg');">
+	<div class="absolute inset-0 bg-black/55" style="backdrop-filter: blur(3px);"></div>
+
+<section class="relative z-10 py-12 md:py-16">
 	<div class="container-site relative z-10">
 		<h2 class="mb-2 text-center text-3xl font-black text-[#7ec87e] md:text-4xl">
 			Notre zone de service
@@ -81,8 +83,7 @@
 </section>
 
 <!-- Section urgence 24/7 -->
-<section class="relative bg-cover bg-center py-14 md:py-20" style="background-image: url('/photo/image00008.jpeg');">
-	<div class="absolute inset-0 bg-black/55"></div>
+<section class="relative z-10 py-14 md:py-20">
 	<div class="container-site relative z-10">
 		<div class="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-red-700/90 p-8 md:flex md:gap-8 md:p-10">
 
@@ -129,5 +130,7 @@
 		</div>
 	</div>
 </section>
+
+</div>
 
 <FullWidthCTA data={homePage.fullWidthCTA} />
