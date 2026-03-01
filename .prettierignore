@@ -1,0 +1,4 @@
+# Prettier ignore
+build/
+.svelte-kit/
+dist/

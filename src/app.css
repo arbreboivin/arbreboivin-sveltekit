@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+	--color-brand-green: #2d6a2d;
+	--color-brand-green-light: #4a9c4a;
+	--color-brand-green-dark: #1a4a1a;
+	--color-brand-cream: #f5f0e8;
+	--color-brand-brown: #5c3d1e;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply font-sans text-gray-800 bg-white antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-bold leading-tight;
+	}
+}
+
+@layer components {
+	.btn-primary {
+		@apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2d6a2d] text-white font-semibold rounded-lg shadow-md hover:bg-[#1a4a1a] focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2 transition-colors duration-200;
+	}
+
+	.btn-secondary {
+		@apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#2d6a2d] text-[#2d6a2d] font-semibold rounded-lg hover:bg-[#2d6a2d] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2 transition-colors duration-200;
+	}
+
+	.container-site {
+		@apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+	}
+
+	.section-padding {
+		@apply py-16 md:py-24;
+	}
+
+	.section-title {
+		@apply text-3xl md:text-4xl font-bold text-gray-900 mb-4;
+	}
+
+	.section-subtitle {
+		@apply text-lg text-gray-600 max-w-2xl;
+	}
+}
