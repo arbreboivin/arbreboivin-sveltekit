@@ -13,30 +13,39 @@
 	<meta property="og:type" content="website" />
 	<meta name="theme-color" content="#2d6a2d" />
 
-	<!--
-		JSON-LD LocalBusiness — décommenter et compléter quand les infos sont prêtes
-		<script type="application/ld+json">
-		{JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
-			"name": site.legalName,
-			"url": site.url,
-			"telephone": site.phone,
-			"email": site.email,
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": site.address.street,
-				"addressLocality": site.address.city,
-				"addressRegion": site.address.province,
-				"postalCode": site.address.postalCode,
-				"addressCountry": "CA"
-			},
-			"openingHours": "Mo-Fr 07:00-18:00",
-			"image": site.url + "/og-image.jpg",
-			"priceRange": "$$"
-		})}
-		</script>
-	-->
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Arbre Boivin",
+		"url": "https://www.arbreboivin.ca",
+		"telephone": "514-922-5807",
+		"email": "ArbreBoivin@gmail.com",
+		"description": "Service d'arbre professionnel et sécuritaire à Portneuf, Saint-Raymond, Pont-Rouge et Québec. Élagage, abattage, plantation, haubanage et urgences 24/7.",
+		"areaServed": [
+			{ "@type": "City", "name": "Portneuf", "addressRegion": "QC", "addressCountry": "CA" },
+			{ "@type": "City", "name": "Saint-Raymond", "addressRegion": "QC", "addressCountry": "CA" },
+			{ "@type": "City", "name": "Pont-Rouge", "addressRegion": "QC", "addressCountry": "CA" },
+			{ "@type": "City", "name": "Québec", "addressRegion": "QC", "addressCountry": "CA" },
+			{ "@type": "City", "name": "Donnacona", "addressRegion": "QC", "addressCountry": "CA" },
+			{ "@type": "City", "name": "Cap-Santé", "addressRegion": "QC", "addressCountry": "CA" }
+		],
+		"hasOfferCatalog": {
+			"@type": "OfferCatalog",
+			"name": "Services d'arbres",
+			"itemListElement": [
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Élagage d'arbres" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abattage d'arbre" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haubanage" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plantation d'arbre" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Essouchement" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Urgence arbre 24/7" } }
+			]
+		},
+		"openingHours": "Mo-Su 00:00-23:59",
+		"priceRange": "$$",
+		"paymentAccepted": "Cash, Credit Card",
+		"currenciesAccepted": "CAD"
+	})}</script>`}
 </svelte:head>
 
 <div class="flex flex-col min-h-screen">
