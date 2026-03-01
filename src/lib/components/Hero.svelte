@@ -60,6 +60,7 @@
 	-->
 	<div class="relative w-full overflow-hidden bg-black" style="padding: 3vw 0;">
 		<!-- Vidéo plein cadre derrière le h1 -->
+		{#if data.videoSrc}
 		<video
 			autoplay
 			muted
@@ -71,6 +72,7 @@
 		>
 			<source src={data.videoSrc} type="video/mp4" />
 		</video>
+		{/if}
 
 		<!-- Barre blanche qui masque la vidéo au-dessus du texte -->
 		<div class="absolute inset-x-0 top-0 bg-white" style="height: 3vw; z-index: 5;"></div>
