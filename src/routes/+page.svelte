@@ -23,8 +23,8 @@
 <LongTextSection data={homePage.longText} />
 
 <!-- Section zone de service -->
-<section class="relative bg-cover bg-center py-12 md:py-16" style="background-image: url('/photo/image00003.jpeg');">
-	<div class="absolute inset-0 bg-black/50"></div>
+<section class="relative bg-cover bg-center py-12 md:py-16" style="background-image: url('/photo/image00008.jpeg');">
+	<div class="absolute inset-0 bg-black/55"></div>
 	<div class="container-site relative z-10">
 		<h2 class="mb-2 text-center text-3xl font-black text-[#7ec87e] md:text-4xl">
 			Notre zone de service
