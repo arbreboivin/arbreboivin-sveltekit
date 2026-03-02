@@ -48,17 +48,17 @@ export const homePage = {
 			{
 				title: 'Élagage',
 				slug: 'elagage',
-				image: '/photo/image00001.jpeg',
-				imageAlt: "Élagueur certifié à la tronçonneuse dans un arbre",
+				image: '/photo/elagage-arboristes.png',
+				imageAlt: "Arboristes en hauteur dans un grand arbre — élagage Arbre Boivin",
 				imagePosition: 'center center',
 				href: '/services/elagage'
 			},
 			{
 				title: "Abattage d'arbre",
 				slug: 'abattage',
-				image: '/photo/image00010.jpeg',
-				imageAlt: "Arborist au sommet d'un tronc d'arbre en abattage",
-				imagePosition: 'center 30%',
+				image: '/photo/abattage-arboriste.png',
+				imageAlt: "Élagueur certifié à la tronçonneuse en action — abattage Arbre Boivin",
+				imagePosition: 'center center',
 				href: '/services/abattage'
 			},
 			{
@@ -72,40 +72,41 @@ export const homePage = {
 			{
 				title: 'Haubanage',
 				slug: 'haubanage',
-				image: '/photo/image00006.jpeg',
-				imageAlt: 'Câble de haubanage installé sur un érable — Arbre Boivin',
-				imagePosition: 'center 50%',
+				image: '/photo/haubanage-cable.png',
+				imageAlt: 'Câble de haubanage entre deux troncs — Arbre Boivin',
+				imagePosition: 'center center',
+				imageFit: 'contain',
 				href: '/services/haubanage'
 			},
 			{
 				title: 'Essouchement',
 				slug: 'essouchement',
-				image: '/photo/image00022.jpeg',
-				imageAlt: "Souches et billes de bois après essouchement — Arbre Boivin",
-				imagePosition: 'center 50%',
+				image: '/photo/essouchement-rognage.png',
+				imageAlt: "Rognage de souche en action — essouchement Arbre Boivin",
+				imagePosition: 'center center',
 				href: '/services/essouchement'
 			},
 			{
 				title: 'Urgence 24/7',
 				slug: 'urgence',
-				image: '/photo/image00028.jpeg',
-				imageAlt: "Avant / après urgence arbre — dégâts de tempête réparés par Arbre Boivin",
+				image: '/photo/urgence-arbre-maison.png',
+				imageAlt: "Arbre tombé sur une maison — intervention urgence Arbre Boivin",
 				imagePosition: 'center center',
 				href: '/services/urgence'
 			},
 			{
 				title: 'Déchiquetage de branches',
 				slug: 'dechiquetage',
-				image: '/photo/image00007.jpeg',
-				imageAlt: "Camion et déchiqueteuse verts Arbre Boivin",
-				imagePosition: 'left center',
+				image: '/photo/dechiquetage-arbreboivin.png',
+				imageAlt: "Déchiquetage de branches — Arbre Boivin, camion et déchiqueteuse",
+				imagePosition: 'center center',
 				href: '/services/dechiquetage'
 			},
 			{
 				title: 'Déboisement et défrichement',
 				slug: 'deboisement',
-				image: '/photo/image00002.jpeg',
-				imageAlt: "Arborist coupant un grand tronc en milieu urbain — déboisement",
+				image: '/photo/deboisement-arbreboivin.png',
+				imageAlt: "Déboisement rapide et efficace — Arbre Boivin, excavatrice et équipement",
 				imagePosition: 'center center',
 				href: '/services/deboisement'
 			}

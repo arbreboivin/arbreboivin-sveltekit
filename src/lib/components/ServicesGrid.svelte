@@ -80,12 +80,12 @@
 			{#each data.items as service}
 				<a href={service.href} class="group block min-h-[44px]" data-card>
 					<div
-						class="relative h-[280px] overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 max-md:h-[280px] sm:h-[440px] lg:h-[520px] max-md:rounded-xl"
+						class="relative h-[280px] overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 max-md:h-[280px] sm:h-[440px] lg:h-[520px] max-md:rounded-xl {service.imageFit === 'contain' ? 'bg-gray-900 dark:bg-slate-900' : ''}"
 					>
 						<img
 							src={service.image}
 							alt={service.imageAlt}
-							class="absolute inset-0 h-full w-full object-cover"
+							class="absolute inset-0 h-full w-full {service.imageFit === 'contain' ? 'object-contain' : 'object-cover'}"
 							loading="lazy"
 							style="will-change: transform; transform: translateZ(0) scale(1); object-position: {service.imagePosition};"
 						/>
