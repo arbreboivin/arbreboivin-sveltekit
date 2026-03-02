@@ -82,6 +82,8 @@
 			muted
 			loop
 			playsinline
+			preload="metadata"
+			poster={data.image}
 			class="absolute inset-0 h-full w-full object-cover"
 			style="z-index: 0;"
 			aria-hidden="true"
@@ -131,6 +133,7 @@
 			style={`image-orientation: from-image;${slide.position ? ` object-position: ${slide.position}` : ''}`}
 				loading={i === 0 ? 'eager' : 'lazy'}
 				fetchpriority={i === 0 ? 'high' : 'auto'}
+				decoding="async"
 			/>
 			{/each}
 

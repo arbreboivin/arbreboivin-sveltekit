@@ -37,8 +37,8 @@ export const homePage = {
 			{ src: '/photo/image00007.jpeg', alt: 'Camion et déchiqueteuse Arbre Boivin — Soumission gratuite' },
 			{ src: '/photo/image00016.jpeg', alt: 'Arboriste certifié préparant ses cordes au sol' },
 			{ src: '/photo/image00014.jpeg', alt: 'Lancer de corde — technique arboricole professionnelle' },
-			{ src: '/photo/image00005.jpeg', alt: "Vue en contre-plongée d'un grand arbre — haubanage" },
-			{ src: '/photo/image00006.jpeg', alt: 'Câble de haubanage installé sur un érable' }
+			{ src: '/photo/image00005.jpeg', alt: "Vue en contre-plongée d'un grand arbre — haubanage", position: 'center top' },
+			{ src: '/photo/image00006.jpeg', alt: 'Câble de haubanage installé sur un érable', position: 'center 30%' }
 		]
 	},
 
@@ -58,23 +58,23 @@ export const homePage = {
 				slug: 'abattage',
 				image: '/photo/image00010.jpeg',
 				imageAlt: "Arborist au sommet d'un tronc d'arbre en abattage",
-				imagePosition: 'center top',
+				imagePosition: 'center 30%',
 				href: '/services/abattage'
 			},
 			{
 				title: "Plantation d'arbre",
 				slug: 'plantation',
-				image: '/photo/image00029.jpeg',
-				imageAlt: "Vue contre-plongée de grands arbres verts en bonne santé",
-				imagePosition: 'center center',
+				image: '/photo/plantation-arbres.png',
+				imageAlt: "Jeunes arbres en motte prêts pour la plantation — Arbre Boivin",
+				imagePosition: 'center 55%',
 				href: '/services/plantation'
 			},
 			{
 				title: 'Haubanage',
 				slug: 'haubanage',
-				image: '/photo/image00005.jpeg',
-				imageAlt: 'Vue contre-plongée sur câble de haubanage installé dans un arbre',
-				imagePosition: 'center center',
+				image: '/photo/image00006.jpeg',
+				imageAlt: 'Câble de haubanage installé sur un érable — Arbre Boivin',
+				imagePosition: 'center 50%',
 				href: '/services/haubanage'
 			},
 			{
@@ -82,7 +82,7 @@ export const homePage = {
 				slug: 'essouchement',
 				image: '/photo/image00022.jpeg',
 				imageAlt: "Souches et billes de bois après essouchement — Arbre Boivin",
-				imagePosition: 'center 40%',
+				imagePosition: 'center 50%',
 				href: '/services/essouchement'
 			},
 			{
