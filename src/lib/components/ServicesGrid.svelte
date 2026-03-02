@@ -66,21 +66,21 @@
 	});
 </script>
 
-<section bind:this={sectionEl} class="py-8 md:py-12 bg-white" id="services">
+<section bind:this={sectionEl} class="py-8 md:py-12 max-md:py-10 bg-white dark:bg-[#111827]" id="services">
 	<!-- Titre centré dans la largeur normale -->
 	<div class="container-site">
-		<h2 class="mb-12 text-center text-3xl font-bold text-[#2d6a2d] md:text-4xl">
+		<h2 class="mb-12 text-center text-3xl font-bold text-[#2d6a2d] dark:text-green-400 max-md:mb-8 max-md:text-2xl md:text-4xl">
 			{data.heading}
 		</h2>
 	</div>
 
-	<!-- Grille pleine largeur pour maximiser la taille des photos -->
-	<div class="px-3 sm:px-5 lg:px-8">
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+	<!-- Grille pleine largeur (mobile : cartes plus courtes, espacement simplifié) -->
+	<div class="px-3 sm:px-5 lg:px-8 max-md:px-4">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 max-md:gap-4">
 			{#each data.items as service}
-				<a href={service.href} class="group block" data-card>
+				<a href={service.href} class="group block min-h-[44px]" data-card>
 					<div
-						class="relative h-[360px] overflow-hidden rounded-lg shadow-md ring-1 ring-black/5 sm:h-[440px] lg:h-[520px]"
+						class="relative h-[280px] overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 max-md:h-[280px] sm:h-[440px] lg:h-[520px] max-md:rounded-xl"
 					>
 						<img
 							src={service.image}
@@ -90,8 +90,8 @@
 							style="will-change: transform; transform: translateZ(0) scale(1); object-position: {service.imagePosition};"
 						/>
 						<!-- Titre en overlay en bas de l'image -->
-						<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-4 pt-10">
-							<h3 class="text-xl font-bold text-white drop-shadow">
+						<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-3 pt-8 max-md:px-4 max-md:pb-3 max-md:pt-6">
+							<h3 class="text-xl font-bold text-white drop-shadow max-md:text-lg">
 								{service.title}
 							</h3>
 						</div>

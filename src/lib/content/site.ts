@@ -4,6 +4,7 @@
 export const site = {
 	name: 'Arbre Boivin',
 	legalName: 'Arbre Boivin',
+	domain: 'Arbreboivin.ca',
 	tagline: 'Services d\'entretien d\'arbres',
 	description:
 		'Service d\'arbre professionnel et sécuritaire. Élagage, abattage, plantation, haubanage et urgences 24/7. Élagueur certifié, assurance responsabilité 2 000 000 $.',

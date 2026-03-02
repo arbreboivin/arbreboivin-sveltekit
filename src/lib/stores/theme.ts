@@ -8,10 +8,7 @@ const STORAGE_KEY = 'arbreboivin-theme';
 export type Theme = 'light' | 'dark';
 
 function getInitialTheme(): Theme {
-	if (typeof window === 'undefined') return 'light';
-	const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-	if (stored === 'dark' || stored === 'light') return stored;
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+	// Toujours démarrer en mode jour à l'arrivée sur le site
 	return 'light';
 }
 

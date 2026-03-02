@@ -22,8 +22,14 @@
 		@apply font-sans text-gray-800 bg-white antialiased transition-colors duration-200;
 	}
 
+	/* Mode sombre type CEDRÈDE : fond bleu marine très foncé, texte blanc/gris clair */
 	html.dark body {
-		@apply bg-slate-900 text-gray-200;
+		@apply text-slate-100 antialiased;
+		background-color: #0c1222;
+	}
+
+	html.dark {
+		color-scheme: dark;
 	}
 
 	h1,
@@ -42,32 +48,62 @@
 	html.dark h2,
 	html.dark h3,
 	html.dark h4 {
-		@apply text-white;
+		@apply text-white font-bold;
 	}
 
-	/* Sections et blocs en mode nuit */
+	/* Sections et blocs : fond bleu marine / gris très foncé */
 	html.dark .bg-white,
 	html.dark section.bg-white {
-		@apply bg-slate-800 border-slate-700;
+		background-color: #111827;
+		@apply border-slate-700/50;
 	}
 
 	html.dark .text-gray-700,
-	html.dark .text-gray-600 {
-		@apply text-gray-300;
+	html.dark .text-gray-600,
+	html.dark .text-gray-500 {
+		@apply text-slate-300;
 	}
 
 	html.dark .bg-gray-50 {
-		@apply bg-slate-800/50;
+		background-color: #1e293b;
+	}
+
+	html.dark .bg-gray-100 {
+		background-color: #1e293b;
 	}
 
 	html.dark .bg-\[\#f5f9f5\] {
-		@apply bg-slate-800/70;
+		background-color: #1e293b;
+	}
+
+	/* Fond crème/beige en mode sombre */
+	html.dark .bg-\[\#f5f0e8\] {
+		background-color: #111827;
+	}
+
+	/* Cartes et boîtes en mode sombre */
+	html.dark .rounded-xl,
+	html.dark .rounded-2xl,
+	html.dark .rounded-lg {
+		@apply border-slate-700/50;
+	}
+
+	/* Liens et boutons secondaires en mode sombre */
+	html.dark a:not(.btn-primary):not([class*="bg-"]) {
+		@apply text-slate-200;
+	}
+	html.dark a:hover:not(.btn-primary) {
+		@apply text-white;
 	}
 }
 
 @layer components {
 	.btn-primary {
 		@apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2d6a2d] text-white font-semibold rounded-lg shadow-md hover:bg-[#1a4a1a] focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2 transition-colors duration-200;
+	}
+
+	html.dark .btn-primary {
+		@apply focus:ring-offset-[#0c1222];
 	}
 
 	.btn-secondary {
@@ -88,5 +124,21 @@
 
 	.section-subtitle {
 		@apply text-lg text-gray-600 max-w-2xl;
+	}
+
+	html.dark .section-title {
+		@apply text-white;
+	}
+
+	html.dark .section-subtitle {
+		@apply text-slate-300;
+	}
+}
+
+/* ─── Mobile uniquement (< 768px) : plus beau et simplifié, sans toucher au desktop ─── */
+@media (max-width: 767px) {
+	body {
+		padding-left: env(safe-area-inset-left, 0);
+		padding-right: env(safe-area-inset-right, 0);
 	}
 }

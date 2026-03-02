@@ -17,7 +17,7 @@
 	<meta name="robots" content="index, follow" />
 	<meta property="og:site_name" content={site.name} />
 	<meta property="og:type" content="website" />
-	<meta name="theme-color" content={$themeStore === 'dark' ? '#0f172a' : '#2d6a2d'} />
+	<meta name="theme-color" content={$themeStore === 'dark' ? '#0c1222' : '#2d6a2d'} />
 
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
@@ -56,9 +56,9 @@
 	})}</script>`}
 </svelte:head>
 
-<div class="flex flex-col min-h-screen bg-white dark:bg-slate-900 transition-colors duration-200">
+<div class="flex flex-col min-h-screen bg-white transition-colors duration-200 dark:bg-[#0c1222]">
 	<Header />
-	<main class="flex-1">
+	<main class="flex-1 max-md:overflow-x-hidden">
 		{@render children()}
 	</main>
 	<Footer />

@@ -43,6 +43,22 @@
 	});
 </script>
 
+<style>
+	/* Desktop : titre grand sur une ligne (inchangé) */
+	.hero-title {
+		font-size: 1.75rem;
+		white-space: normal;
+		line-height: 1.2;
+		padding: 0 0.5rem;
+	}
+	@media (min-width: 768px) {
+		.hero-title {
+			font-size: 60px;
+			white-space: nowrap;
+			padding: 0;
+		}
+	}
+</style>
 <section aria-label="Accueil Arbre Boivin">
 	<!--
 		① TITRE — vidéo visible UNIQUEMENT dans les lettres, fond blanc.
@@ -78,11 +94,9 @@
 		<div class="absolute inset-x-0 top-0 bg-white" style="height: 3vw; z-index: 5;"></div>
 
 		<h1
-			class="relative w-full font-black uppercase text-center leading-none"
+			class="hero-title relative w-full font-black uppercase text-center leading-tight"
 			style="
 				font-family: 'SF Compact Rounded', sans-serif;
-				font-size: 60px;
-				white-space: nowrap;
 				letter-spacing: -0.04em;
 				word-spacing: 0.05em;
 				background: #fff;
@@ -102,11 +116,11 @@
 	</div>
 
 	<!-- ② CORPS : diaporama gauche / texte droite -->
-	<div class="flex flex-col lg:grid lg:grid-cols-2 bg-white">
+	<div class="flex flex-col lg:grid lg:grid-cols-2 bg-white dark:bg-[#111827]">
 		<!-- ── Diaporama ── -->
 		<div class="relative bg-gray-900">
-			<!-- Zone image à hauteur fixe responsive -->
-			<div class="relative h-[520px] overflow-hidden sm:h-[520px] lg:h-[600px]">
+			<!-- Zone image à hauteur fixe responsive (mobile : plus courte pour simplifier) -->
+			<div class="relative h-[320px] overflow-hidden max-md:h-[320px] sm:h-[520px] lg:h-[600px]">
 			{#each slides as slide, i}
 			<img
 				src={slide.src}
@@ -163,12 +177,12 @@
 						/>
 					</svg>
 				</button>
-				<!-- Barre blanche en bas : légende + compteur en texte noir -->
-				<div class="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between bg-white px-4 py-3">
-					<span class="max-w-[60%] truncate text-sm font-semibold italic text-gray-800 tracking-wide">
+				<!-- Barre blanche en bas : légende + compteur (mode sombre = barre foncée) -->
+				<div class="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between bg-white dark:bg-[#111827] px-4 py-3 dark:border-t dark:border-slate-700">
+					<span class="max-w-[60%] truncate text-sm font-semibold italic text-gray-800 dark:text-slate-200 tracking-wide">
 						{slides[current]?.alt}
 					</span>
-					<div class="flex shrink-0 items-center gap-1 font-mono text-xs text-gray-800">
+					<div class="flex shrink-0 items-center gap-1 font-mono text-xs text-gray-800 dark:text-slate-300">
 						<button
 							onclick={goPrev}
 							class="px-1.5 text-base leading-none transition-colors hover:text-black"
@@ -186,30 +200,30 @@
 		</div>
 
 		<!-- ── Texte + CTA ── -->
-		<div class="flex flex-col justify-center bg-white px-8 py-12 lg:px-12 lg:py-16">
+		<div class="flex flex-col justify-center bg-white dark:bg-[#111827] px-6 py-10 max-md:px-5 max-md:py-8 lg:px-12 lg:py-16">
 			<p
-				class="mb-5 text-[10px] font-bold uppercase tracking-widest text-[#2d6a2d]"
+				class="mb-4 max-md:mb-3 text-[10px] font-bold uppercase tracking-widest text-[#2d6a2d] dark:text-amber-400 max-md:text-xs"
 				aria-hidden="true"
 			>
 				{data.kicker}
 			</p>
 
-			<p class="mb-8 max-w-md text-base leading-relaxed text-gray-700 md:text-lg">
+			<p class="mb-6 max-md:mb-5 max-w-md text-base leading-relaxed text-gray-700 dark:text-slate-300 max-md:text-[15px] md:text-lg">
 				{data.subheading}
 			</p>
 
 			<a
 				href={data.phoneHref}
-				class="mb-10 block text-3xl font-black text-[#2d6a2d] transition-colors hover:text-[#1a4a1a]"
+				class="mb-8 max-md:mb-6 block text-3xl max-md:text-2xl font-black text-[#2d6a2d] dark:text-amber-400 transition-colors hover:text-[#1a4a1a] dark:hover:text-amber-300"
 				aria-label="Appeler Arbre Boivin"
 			>
 				{data.phone}
 			</a>
 
-			<div class="flex flex-col gap-3 sm:flex-row">
+			<div class="flex flex-col gap-3 sm:flex-row max-md:gap-4">
 				<a
 					href={data.cta.href}
-					class="inline-flex items-center justify-center gap-2 rounded px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-md transition-colors bg-[#2d6a2d] hover:bg-[#1a4a1a] focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2"
+					class="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 max-md:w-full max-md:py-4 max-md:min-h-[48px] text-sm font-bold uppercase tracking-wide text-white shadow-md transition-colors bg-[#2d6a2d] hover:bg-[#1a4a1a] focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2"
 				>
 					{data.cta.label}
 					<svg
@@ -229,7 +243,7 @@
 				</a>
 				<a
 					href={data.ctaSecondary.href}
-					class="inline-flex items-center justify-center rounded border-2 border-[#2d6a2d] px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-[#2d6a2d] transition-colors hover:bg-[#2d6a2d] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2"
+					class="inline-flex items-center justify-center rounded-xl border-2 border-[#2d6a2d] dark:border-slate-500 dark:text-slate-200 px-7 py-4 max-md:w-full max-md:min-h-[48px] text-sm font-semibold uppercase tracking-wide text-[#2d6a2d] transition-colors hover:bg-[#2d6a2d] hover:text-white dark:hover:bg-slate-600 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-[#2d6a2d] focus:ring-offset-2 dark:focus:ring-offset-[#111827]"
 				>
 					{data.ctaSecondary.label}
 				</a>
@@ -237,14 +251,14 @@
 		</div>
 	</div>
 
-	<!-- ③ Bande badges -->
-	<div class="bg-white px-4 py-5 -mt-2 flex flex-wrap text-center">
-		<div class="container-site flex flex-wrap justify-center gap-3">
+	<!-- ③ Bande badges (mobile : plus compacte) -->
+	<div class="bg-white dark:bg-[#111827] px-4 py-5 max-md:py-4 -mt-2 flex flex-wrap text-center dark:border-t dark:border-slate-700/50">
+		<div class="container-site flex flex-wrap justify-center gap-3 max-md:gap-2">
 			{#each data.badges as badge}
 				<span
-					class="inline-flex items-center gap-2 rounded-full border border-black/60 px-4 py-2 text-base font-semibold uppercase tracking-wide text-black"
+					class="inline-flex items-center gap-2 rounded-full border border-black/60 dark:border-slate-500 dark:text-slate-200 px-4 py-2 max-md:px-3 max-md:py-1.5 text-base max-md:text-sm font-semibold uppercase tracking-wide text-black"
 				>
-					<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+					<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-green-400 dark:bg-amber-400" aria-hidden="true"></span>
 					{badge.label}
 				</span>
 			{/each}

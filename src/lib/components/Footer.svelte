@@ -4,23 +4,23 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="bg-gray-900 text-gray-300">
-	<div class="container-site py-12 md:py-16">
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<footer class="bg-gray-900 dark:bg-[#0c1222] text-gray-300 dark:text-slate-300 dark:border-t dark:border-slate-700/50">
+	<div class="container-site py-12 md:py-16 max-md:py-10">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-md:gap-8 max-md:text-center">
 			<!-- Colonne 1 : Brand -->
-			<div>
-				<div class="flex items-center gap-3 mb-4">
+			<div class="max-md:flex max-md:flex-col max-md:items-center">
+				<div class="flex items-center gap-3 mb-4 max-md:justify-center">
 					<span class="text-3xl">🌲</span>
 					<div>
 						<div class="font-bold text-white text-lg">{site.name}</div>
-						<div class="text-xs text-gray-400">{site.tagline}</div>
+						<div class="text-xs text-gray-400">{site.domain}</div>
 					</div>
 				</div>
-				<p class="text-sm text-gray-400 leading-relaxed max-w-xs">
+				<p class="text-sm text-gray-400 leading-relaxed max-w-xs max-md:max-w-sm">
 					{site.description}
 				</p>
 				{#if site.social.facebook}
-					<div class="mt-5 flex gap-4">
+					<div class="mt-5 flex gap-4 max-md:justify-center">
 						<a
 							href={site.social.facebook}
 							target="_blank"
@@ -50,18 +50,18 @@
 			</div>
 
 			<!-- Colonne 2 : Navigation -->
-			<div>
+			<div class="max-md:border-t max-md:border-gray-800 max-md:pt-8">
 				<h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigation</h3>
-				<ul class="space-y-2">
+				<ul class="space-y-2 max-md:space-y-0">
 					{#each site.nav as item}
 						<li>
-							<a href={item.href} class="text-sm text-gray-400 hover:text-white transition-colors">
+							<a href={item.href} class="text-sm text-gray-400 hover:text-white transition-colors max-md:block max-md:py-3 max-md:text-base max-md:min-h-[44px] max-md:flex max-md:items-center max-md:justify-center">
 								{item.label}
 							</a>
 						</li>
 					{/each}
 					<li>
-						<a href={site.cta.href} class="text-sm text-[#4a9c4a] hover:text-white transition-colors font-medium">
+						<a href={site.cta.href} class="text-sm text-[#4a9c4a] hover:text-white transition-colors font-medium max-md:block max-md:py-3 max-md:text-base max-md:min-h-[44px] max-md:flex max-md:items-center max-md:justify-center">
 							{site.cta.label} →
 						</a>
 					</li>
@@ -69,27 +69,27 @@
 			</div>
 
 			<!-- Colonne 3 : Coordonnées -->
-			<div>
+			<div class="max-md:border-t max-md:border-gray-800 max-md:pt-8">
 				<h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Nous joindre</h3>
-				<ul class="space-y-3 text-sm">
+				<ul class="space-y-3 text-sm max-md:space-y-4">
 					<li>
-						<a href={site.phoneHref} class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+						<a href={site.phoneHref} class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors max-md:justify-center max-md:min-h-[48px] max-md:text-base">
 							<span class="text-[#4a9c4a]">📞</span>
 							{site.phone}
 						</a>
 					</li>
 					<li>
-						<a href="mailto:{site.email}" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+						<a href="mailto:{site.email}" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors max-md:justify-center max-md:min-h-[48px] max-md:text-base">
 							<span class="text-[#4a9c4a]">✉️</span>
 							{site.email}
 						</a>
 					</li>
-					<li class="flex items-start gap-2 text-gray-400">
-						<span class="text-[#4a9c4a] mt-0.5">📍</span>
+					<li class="flex items-start gap-2 text-gray-400 max-md:justify-center max-md:text-center">
+						<span class="text-[#4a9c4a] mt-0.5 max-md:mt-0">📍</span>
 						<span>{site.serviceArea}</span>
 					</li>
-					<li class="flex items-start gap-2 text-gray-400">
-						<span class="text-[#4a9c4a] mt-0.5">🕐</span>
+					<li class="flex items-start gap-2 text-gray-400 max-md:justify-center max-md:text-center">
+						<span class="text-[#4a9c4a] mt-0.5 max-md:mt-0">🕐</span>
 						<span>{site.hours}</span>
 					</li>
 				</ul>
@@ -97,10 +97,10 @@
 		</div>
 
 		<!-- Bottom bar -->
-		<div class="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+		<div class="mt-10 pt-6 border-t border-gray-800 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500 dark:text-slate-400 max-md:mt-8 max-md:pt-5 max-md:text-center">
 			<p>© {currentYear} {site.legalName} — Tous droits réservés</p>
 			<p>
-				Réalisé avec <a href="https://kit.svelte.dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">SvelteKit</a>
+				Réalisé avec <a href="https://kit.svelte.dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white dark:text-slate-400 dark:hover:text-slate-200 transition-colors">SvelteKit</a>
 			</p>
 		</div>
 	</div>

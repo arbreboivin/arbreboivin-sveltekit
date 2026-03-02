@@ -4,6 +4,7 @@
 	import GoogleReviews from '$lib/components/GoogleReviews.svelte';
 	import LongTextSection from '$lib/components/LongTextSection.svelte';
 	import FullWidthCTA from '$lib/components/FullWidthCTA.svelte';
+	import MapServiceArea from '$lib/components/MapServiceArea.svelte';
 	import { homePageEn } from '$lib/content/home.en';
 	import { site } from '$lib/content/site';
 </script>
@@ -24,7 +25,7 @@
 <GoogleReviews />
 <LongTextSection data={homePageEn.longText} />
 
-<!-- Service areas -->
+<!-- Service areas + map with perimeter -->
 <section class="bg-[#f5f9f5] py-10 md:py-14">
 	<div class="container-site text-center">
 		<p class="mb-2 text-xs font-bold uppercase tracking-widest text-[#2d6a2d]">Service Areas</p>
@@ -35,6 +36,11 @@
 			Arbre Boivin offers professional pruning, tree removal and tree maintenance services
 			throughout the Portneuf region and surrounding areas. Free on-site estimate.
 		</p>
+
+		<div class="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl max-md:rounded-xl mb-8">
+			<MapServiceArea legend="Green area = service area (Portneuf, Saint-Raymond, Québec and surroundings)" />
+		</div>
+
 		<div class="flex flex-wrap justify-center gap-3">
 			{#each [
 				'Saint-Raymond', 'Portneuf', 'Pont-Rouge', 'Donnacona', 'Cap-Santé',
