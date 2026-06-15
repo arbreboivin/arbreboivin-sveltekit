@@ -49,6 +49,12 @@ export interface RegionBenefit {
 	text: string;
 }
 
+export interface RegionImage {
+	src: string;
+	alt: string;
+	position?: string;
+}
+
 export interface RegionSection {
 	id: string;
 	title: string;
@@ -56,6 +62,7 @@ export interface RegionSection {
 	benefits: RegionBenefit[];
 	serviceHref: string;
 	ctaLabel: string;
+	image: RegionImage;
 }
 
 export interface RegionPageContent {
@@ -64,6 +71,8 @@ export interface RegionPageContent {
 	heroTitle: string;
 	heroSubtitle: string;
 	intro: string;
+	heroImage: RegionImage;
+	gallery: RegionImage[];
 	sections: RegionSection[];
 }
 
@@ -71,10 +80,48 @@ function fill(text: string, city: string, zone: string): string {
 	return text.replace(/\{city\}/g, city).replace(/\{zone\}/g, zone);
 }
 
-const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'> & {
+/** Photos hero — une par municipalité (rotation sur le pool) */
+const heroPhotoPool: { src: string; position: string }[] = [
+	{ src: '/photo/elagage-arboristes.png', position: 'center center' },
+	{ src: '/photo/abattage-arboriste.png', position: 'center center' },
+	{ src: '/photo/image00012.jpeg', position: 'center center' },
+	{ src: '/photo/image00001.jpeg', position: 'center center' },
+	{ src: '/photo/image00033.jpeg', position: 'center 20%' },
+	{ src: '/photo/image00010.jpeg', position: 'center top' },
+	{ src: '/photo/plantation-arbres.png', position: 'center 40%' },
+	{ src: '/photo/haubanage-cable.png', position: 'center center' },
+	{ src: '/photo/essouchement-rognage.png', position: 'center center' },
+	{ src: '/photo/urgence-arbre-maison.png', position: 'center center' },
+	{ src: '/photo/dechiquetage-arbreboivin.png', position: 'center top' },
+	{ src: '/photo/deboisement-arbreboivin.png', position: 'center 75%' },
+	{ src: '/photo/image00028.jpeg', position: 'center center' },
+	{ src: '/photo/image00032.jpeg', position: 'center 20%' },
+	{ src: '/photo/image00016.jpeg', position: 'center center' },
+	{ src: '/photo/image00007.jpeg', position: 'left center' },
+	{ src: '/photo/image00005.jpeg', position: 'center top' },
+	{ src: '/photo/image00019.jpeg', position: 'center center' },
+	{ src: '/photo/image00026.jpeg', position: 'center top' },
+	{ src: '/photo/image00029.jpeg', position: 'center center' },
+	{ src: '/photo/image00022.jpeg', position: 'center 40%' },
+	{ src: '/photo/image00014.jpeg', position: 'center center' },
+	{ src: '/photo/image00006.jpeg', position: 'center 30%' },
+	{ src: '/photo/image00011.jpeg', position: 'center top' },
+	{ src: '/photo/image00017.jpeg', position: 'center center' },
+	{ src: '/photo/image00030.jpeg', position: 'center center' }
+];
+
+const galleryPhotoPool: { src: string; position: string; altTemplate: string }[] = [
+	{ src: '/photo/image00001.jpeg', position: 'center center', altTemplate: 'Élagueur certifié à {city}' },
+	{ src: '/photo/abattage-arboriste.png', position: 'center center', altTemplate: "Abattage d'arbre à {city}" },
+	{ src: '/photo/essouchement-rognage.png', position: 'center center', altTemplate: 'Essouchement à {city}' },
+	{ src: '/photo/image00007.jpeg', position: 'left center', altTemplate: 'Équipement Arbre Boivin — {city}' }
+];
+
+const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits' | 'image'> & {
 	title: string;
 	paragraphs: string[];
 	benefits: RegionBenefit[];
+	image: { src: string; position: string; altTemplate: string };
 }[] = [
 	{
 		id: 'abattage',
@@ -99,7 +146,12 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/abattage',
-		ctaLabel: 'Planifier une estimation pour un abattage'
+		ctaLabel: 'Planifier une estimation pour un abattage',
+		image: {
+			src: '/photo/abattage-arboriste.png',
+			position: 'center center',
+			altTemplate: "Abattage d'arbre professionnel à {city} — Arbre Boivin"
+		}
 	},
 	{
 		id: 'elagage',
@@ -124,7 +176,12 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/elagage',
-		ctaLabel: 'Planifier une rencontre avec un arboriste'
+		ctaLabel: 'Planifier une rencontre avec un arboriste',
+		image: {
+			src: '/photo/elagage-arboristes.png',
+			position: 'center center',
+			altTemplate: "Élagage et émondage d'arbre à {city} — Arbre Boivin"
+		}
 	},
 	{
 		id: 'essouchement',
@@ -149,7 +206,12 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/essouchement',
-		ctaLabel: "Demander une estimation d'essouchement"
+		ctaLabel: "Demander une estimation d'essouchement",
+		image: {
+			src: '/photo/essouchement-rognage.png',
+			position: 'center center',
+			altTemplate: 'Essouchement par rognage à {city} — Arbre Boivin'
+		}
 	},
 	{
 		id: 'haubanage',
@@ -174,7 +236,12 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/haubanage',
-		ctaLabel: 'Évaluer le haubanage de mon arbre'
+		ctaLabel: 'Évaluer le haubanage de mon arbre',
+		image: {
+			src: '/photo/haubanage-cable.png',
+			position: 'center center',
+			altTemplate: 'Haubanage et câblage à {city} — Arbre Boivin'
+		}
 	},
 	{
 		id: 'plantation',
@@ -199,7 +266,12 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/plantation',
-		ctaLabel: 'Planifier une plantation'
+		ctaLabel: 'Planifier une plantation',
+		image: {
+			src: '/photo/plantation-arbres.png',
+			position: 'center 40%',
+			altTemplate: "Plantation d'arbre à {city} — Arbre Boivin"
+		}
 	},
 	{
 		id: 'urgence',
@@ -224,12 +296,19 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits'>
 			}
 		],
 		serviceHref: '/services/urgence',
-		ctaLabel: 'Appeler pour une urgence'
+		ctaLabel: 'Appeler pour une urgence',
+		image: {
+			src: '/photo/urgence-arbre-maison.png',
+			position: 'center center',
+			altTemplate: 'Urgence arbre 24/7 à {city} — Arbre Boivin'
+		}
 	}
 ];
 
 export function getRegionPageContent(region: Region): RegionPageContent {
 	const { name: city, zone } = region;
+	const regionIndex = regions.findIndex((r) => r.slug === region.slug);
+	const heroPhoto = heroPhotoPool[regionIndex % heroPhotoPool.length];
 
 	const sections: RegionSection[] = sectionTemplates.map((tpl) => ({
 		id: tpl.id,
@@ -240,8 +319,22 @@ export function getRegionPageContent(region: Region): RegionPageContent {
 			text: fill(b.text, city, zone)
 		})),
 		serviceHref: tpl.serviceHref,
-		ctaLabel: tpl.ctaLabel
+		ctaLabel: tpl.ctaLabel,
+		image: {
+			src: tpl.image.src,
+			position: tpl.image.position,
+			alt: fill(tpl.image.altTemplate, city, zone)
+		}
 	}));
+
+	const gallery: RegionImage[] = galleryPhotoPool.map((photo, i) => {
+		const poolPhoto = galleryPhotoPool[(regionIndex + i) % galleryPhotoPool.length];
+		return {
+			src: poolPhoto.src,
+			position: poolPhoto.position,
+			alt: fill(poolPhoto.altTemplate, city, zone)
+		};
+	});
 
 	return {
 		region,
@@ -252,6 +345,12 @@ export function getRegionPageContent(region: Region): RegionPageContent {
 		heroTitle: `Élagage ${city} — Abattage d'arbre`,
 		heroSubtitle: `Émondeur certifié — Région de ${zone}`,
 		intro: `L'arboriculture à ${city}, c'est une affaire de certification et de sécurité. Les travaux dans les arbres exigent une formation rigoureuse pour préserver la santé de vos arbres et celle des personnes autour. Arbre Boivin dessert ${city} et la région de ${zone} avec des élagueurs certifiés, une assurance responsabilité de 2 000 000 $ et des estimations gratuites. Déléguez vos travaux arboricoles à des professionnels dès maintenant.`,
+		heroImage: {
+			src: heroPhoto.src,
+			position: heroPhoto.position,
+			alt: `Services d'arbre professionnels à ${city} — Arbre Boivin`
+		},
+		gallery,
 		sections
 	};
 }

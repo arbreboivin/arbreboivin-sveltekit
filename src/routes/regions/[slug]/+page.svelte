@@ -12,6 +12,7 @@
 	<meta name="description" content={page.seo.description} />
 	<meta property="og:title" content="{page.seo.title} | {site.name}" />
 	<meta property="og:description" content={page.seo.description} />
+	<meta property="og:image" content="{site.url}{page.heroImage.src}" />
 	<meta property="og:url" content={canonical} />
 	<link rel="canonical" href={canonical} />
 </svelte:head>
@@ -19,10 +20,12 @@
 <!-- Hero -->
 <div class="relative min-h-[360px] w-full overflow-hidden bg-[#1a4a1a] md:min-h-[420px]">
 	<img
-		src="/photo/image00012.jpeg"
-		alt="Élagueur certifié Arbre Boivin — services d'arbre à {region.name}"
-		class="absolute inset-0 h-full w-full object-cover opacity-40"
+		src={page.heroImage.src}
+		alt={page.heroImage.alt}
+		class="absolute inset-0 h-full w-full object-cover opacity-50"
+		style="object-position: {page.heroImage.position ?? 'center center'};"
 		fetchpriority="high"
+		decoding="async"
 	/>
 	<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
 
@@ -50,25 +53,40 @@
 
 <!-- Intro -->
 <section class="section-padding bg-white">
-	<div class="container-site max-w-4xl">
-		<h2 class="mb-6 text-2xl font-black text-[#2d6a2d] md:text-3xl">
-			Services d'arbre à {region.name}, {region.zone}
-		</h2>
-		<p class="text-lg leading-relaxed text-gray-700">{page.intro}</p>
+	<div class="container-site">
+		<div class="grid items-center gap-10 lg:grid-cols-2">
+			<div>
+				<h2 class="mb-6 text-2xl font-black text-[#2d6a2d] md:text-3xl">
+					Services d'arbre à {region.name}, {region.zone}
+				</h2>
+				<p class="text-lg leading-relaxed text-gray-700">{page.intro}</p>
 
-		<div class="mt-8 flex flex-wrap gap-3">
-			<a
-				href="/contact"
-				class="inline-flex items-center gap-2 rounded-lg bg-[#2d6a2d] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow transition-colors hover:bg-[#1a4a1a]"
-			>
-				Estimation gratuite
-			</a>
-			<a
-				href={site.phoneHref}
-				class="inline-flex items-center gap-2 rounded-lg border-2 border-[#2d6a2d] px-6 py-3 text-sm font-semibold text-[#2d6a2d] transition-colors hover:bg-[#2d6a2d] hover:text-white"
-			>
-				{site.phone}
-			</a>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a
+						href="/contact"
+						class="inline-flex items-center gap-2 rounded-lg bg-[#2d6a2d] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow transition-colors hover:bg-[#1a4a1a]"
+					>
+						Estimation gratuite
+					</a>
+					<a
+						href={site.phoneHref}
+						class="inline-flex items-center gap-2 rounded-lg border-2 border-[#2d6a2d] px-6 py-3 text-sm font-semibold text-[#2d6a2d] transition-colors hover:bg-[#2d6a2d] hover:text-white"
+					>
+						{site.phone}
+					</a>
+				</div>
+			</div>
+
+			<div class="overflow-hidden rounded-2xl shadow-xl">
+				<img
+					src={page.gallery[0].src}
+					alt={page.gallery[0].alt}
+					class="h-[320px] w-full object-cover md:h-[380px]"
+					style="object-position: {page.gallery[0].position ?? 'center center'};"
+					loading="eager"
+					decoding="async"
+				/>
+			</div>
 		</div>
 	</div>
 </section>
@@ -82,6 +100,18 @@
 		class:bg-white={i % 2 === 0}
 	>
 		<div class="container-site">
+			<!-- Photo pleine largeur -->
+			<div class="mb-8 overflow-hidden rounded-2xl shadow-lg">
+				<img
+					src={section.image.src}
+					alt={section.image.alt}
+					class="h-[240px] w-full object-cover sm:h-[300px] md:h-[360px]"
+					style="object-position: {section.image.position ?? 'center center'};"
+					loading={i === 0 ? 'eager' : 'lazy'}
+					decoding="async"
+				/>
+			</div>
+
 			<div class="grid gap-10 lg:grid-cols-3">
 				<div class="lg:col-span-2">
 					<h2 class="mb-6 text-2xl font-black text-gray-900 md:text-3xl">
@@ -123,6 +153,29 @@
 		</div>
 	</section>
 {/each}
+
+<!-- Galerie photos -->
+<section class="bg-gray-50 py-14">
+	<div class="container-site">
+		<h2 class="mb-8 text-center text-2xl font-black text-gray-900 md:text-3xl">
+			Nos travaux à {region.name} et environs
+		</h2>
+		<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+			{#each page.gallery as photo, i}
+				<div class="overflow-hidden rounded-xl shadow-md">
+					<img
+						src={photo.src}
+						alt={photo.alt}
+						class="h-[180px] w-full object-cover transition-transform duration-500 hover:scale-105 sm:h-[220px]"
+						style="object-position: {photo.position ?? 'center center'};"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+			{/each}
+		</div>
+	</div>
+</section>
 
 <!-- Badges confiance -->
 <section class="bg-[#1a4a1a] py-12 text-white">
