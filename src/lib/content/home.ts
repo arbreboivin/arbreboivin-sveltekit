@@ -66,7 +66,7 @@ export const homePage = {
 				slug: 'plantation',
 				image: '/photo/plantation-arbres.png',
 				imageAlt: "Jeunes arbres en motte prêts pour la plantation — Arbre Boivin",
-				imagePosition: 'center 55%',
+				imagePosition: 'center 40%',
 				href: '/services/plantation'
 			},
 			{
@@ -99,7 +99,7 @@ export const homePage = {
 				slug: 'dechiquetage',
 				image: '/photo/dechiquetage-arbreboivin.png',
 				imageAlt: "Déchiquetage de branches — Arbre Boivin, camion et déchiqueteuse",
-				imagePosition: 'center center',
+				imagePosition: 'center top',
 				href: '/services/dechiquetage'
 			},
 			{
@@ -107,7 +107,7 @@ export const homePage = {
 				slug: 'deboisement',
 				image: '/photo/deboisement-arbreboivin.png',
 				imageAlt: "Déboisement rapide et efficace — Arbre Boivin, excavatrice et équipement",
-				imagePosition: 'center center',
+				imagePosition: 'center 75%',
 				href: '/services/deboisement'
 			}
 		]

@@ -6,6 +6,7 @@
 	import FullWidthCTA from '$lib/components/FullWidthCTA.svelte';
 	import MapServiceArea from '$lib/components/MapServiceArea.svelte';
 	import { homePageEn } from '$lib/content/home.en';
+	import { regions } from '$lib/content/regions';
 	import { site } from '$lib/content/site';
 </script>
 
@@ -42,19 +43,13 @@
 		</div>
 
 		<div class="flex flex-wrap justify-center gap-3">
-			{#each [
-				'Saint-Raymond', 'Portneuf', 'Pont-Rouge', 'Donnacona', 'Cap-Santé',
-				'Neuville', 'Saint-Basile', 'Saint-Marc-des-Carrières', 'Saint-Casimir',
-				'Saint-Alban', 'Saint-Ubalde', 'Saint-Gilbert', 'Saint-Léonard-de-Portneuf',
-				'Sainte-Christine-d\'Auvergne', 'Deschambault-Grondines', 'Shannon',
-				'Fossambault-sur-le-Lac', 'Lac-Saint-Joseph', 'Stoneham-et-Tewkesbury',
-				'Saint-Augustin-de-Desmaures', 'L\'Ancienne-Lorette', 'Val-Bélair',
-				'Québec', 'Saint-Émile', 'Loretteville', 'Sainte-Foy',
-				'Sainte-Brigitte-de-Laval', 'Boischatel'
-			] as ville}
-				<span class="rounded-full border-2 border-[#2d6a2d] px-4 py-1.5 text-sm font-semibold text-[#2d6a2d]">
-					{ville}
-				</span>
+			{#each regions as region}
+				<a
+					href="/regions/{region.slug}"
+					class="rounded-full border-2 border-[#2d6a2d] px-4 py-1.5 text-sm font-semibold text-[#2d6a2d] transition-colors hover:bg-[#2d6a2d] hover:text-white"
+				>
+					{region.name}
+				</a>
 			{/each}
 		</div>
 		<a

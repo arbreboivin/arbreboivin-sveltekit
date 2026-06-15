@@ -5,6 +5,7 @@
 	import LongTextSection from '$lib/components/LongTextSection.svelte';
 	import MapServiceArea from '$lib/components/MapServiceArea.svelte';
 	import { homePage } from '$lib/content/home';
+	import { regions } from '$lib/content/regions';
 	import { site } from '$lib/content/site';
 </script>
 
@@ -66,20 +67,23 @@
 				notre zone de couverture.
 			</p>
 			<div class="flex flex-wrap gap-2 max-md:gap-1.5">
-				{#each [
-					'Saint-Raymond', 'Portneuf', 'Pont-Rouge', 'Donnacona', 'Cap-Santé',
-					'Neuville', 'Saint-Basile', 'Saint-Marc-des-Carrières', 'Saint-Casimir',
-					'Saint-Alban', 'Saint-Ubalde', 'Saint-Gilbert', 'Saint-Léonard-de-Portneuf',
-					'Sainte-Christine-d\'Auvergne', 'Deschambault-Grondines', 'Shannon',
-					'Fossambault-sur-le-Lac', 'Stoneham-et-Tewkesbury',
-					'Saint-Augustin-de-Desmaures', 'L\'Ancienne-Lorette', 'Val-Bélair',
-					'Québec', 'Loretteville', 'Sainte-Foy', 'Sainte-Brigitte-de-Laval', 'Boischatel'
-				] as ville}
-					<span class="rounded-full bg-gray-100 dark:bg-slate-700 px-3 py-1 text-xs font-semibold text-gray-700 dark:text-slate-200">
-						{ville}
-					</span>
+				{#each regions as region}
+					<a
+						href="/regions/{region.slug}"
+						class="rounded-full bg-gray-100 dark:bg-slate-700 px-3 py-1 text-xs font-semibold text-gray-700 dark:text-slate-200 transition-colors hover:bg-[#2d6a2d] hover:text-white"
+					>
+						{region.name}
+					</a>
 				{/each}
 			</div>
+			<p class="mt-5 text-center">
+				<a
+					href="/regions"
+					class="text-sm font-semibold text-[#7ec87e] underline-offset-2 hover:underline"
+				>
+					Voir toutes les régions desservies →
+				</a>
+			</p>
 		</div>
 	</div>
 </section>

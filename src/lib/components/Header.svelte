@@ -32,13 +32,16 @@
 		if (path.startsWith('/en')) {
 			const fr = path.slice(3) || '/';
 			return fr;
-		} else {
-			return '/en' + (path === '/' ? '' : path);
 		}
+		// Pages régionales : français seulement (comme Arboplus)
+		if (path.startsWith('/regions')) {
+			return null;
+		}
+		return '/en' + (path === '/' ? '' : path);
 	});
 
 	const hrefFr = $derived(isEnglish ? (page.url.pathname.slice(3) || '/') : null);
-	const hrefEn = $derived(!isEnglish ? langSwitchHref() : null);
+	const hrefEn = $derived(!isEnglish && langSwitchHref() !== null ? langSwitchHref() : null);
 
 	// Nav anglaise
 	const navEn = [
@@ -318,13 +321,15 @@
 					<a href={isEnglish ? '/en/contact' : site.cta.href} onclick={closeMobile} class="btn-primary w-full text-base py-4 min-h-[48px] rounded-xl flex items-center justify-center">
 						{isEnglish ? 'Free estimate' : site.cta.label}
 					</a>
-					<a
-						href={langSwitchHref()}
-						onclick={closeMobile}
-						class="flex items-center justify-center gap-1 rounded-xl border-2 border-gray-300 px-5 py-4 text-sm font-bold uppercase tracking-widest text-gray-600 transition-colors hover:border-[#2d6a2d] hover:text-[#2d6a2d] dark:border-slate-600 dark:text-gray-300 dark:hover:border-green-400 dark:hover:text-green-400 min-h-[48px]"
-					>
-						{isEnglish ? '🇫🇷 Français' : '🇬🇧 English'}
-					</a>
+					{#if langSwitchHref()}
+						<a
+							href={langSwitchHref()}
+							onclick={closeMobile}
+							class="flex items-center justify-center gap-1 rounded-xl border-2 border-gray-300 px-5 py-4 text-sm font-bold uppercase tracking-widest text-gray-600 transition-colors hover:border-[#2d6a2d] hover:text-[#2d6a2d] dark:border-slate-600 dark:text-gray-300 dark:hover:border-green-400 dark:hover:text-green-400 min-h-[48px]"
+						>
+							{isEnglish ? '🇫🇷 Français' : '🇬🇧 English'}
+						</a>
+					{/if}
 				</div>
 			</nav>
 		</div>

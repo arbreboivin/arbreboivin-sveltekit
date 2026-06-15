@@ -3,6 +3,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { site } from '$lib/content/site';
+	import { regionNames } from '$lib/content/regions';
 	import { themeStore } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 
@@ -27,16 +28,7 @@
 		"telephone": "514-922-5807",
 		"email": "ArbreBoivin@gmail.com",
 		"description": "Service d'arbre professionnel et sécuritaire à Portneuf, Saint-Raymond, Pont-Rouge et Québec. Élagage, abattage, plantation, haubanage et urgences 24/7.",
-		"areaServed": [
-			"Saint-Raymond", "Portneuf", "Pont-Rouge", "Donnacona", "Cap-Santé",
-			"Neuville", "Saint-Basile", "Saint-Marc-des-Carrières", "Saint-Casimir",
-			"Saint-Alban", "Saint-Ubalde", "Saint-Gilbert", "Saint-Léonard-de-Portneuf",
-			"Sainte-Christine-d'Auvergne", "Deschambault-Grondines", "Shannon",
-			"Fossambault-sur-le-Lac", "Lac-Saint-Joseph", "Stoneham-et-Tewkesbury",
-			"Saint-Augustin-de-Desmaures", "L'Ancienne-Lorette", "Val-Bélair",
-			"Québec", "Saint-Émile", "Loretteville", "Sainte-Foy",
-			"Sainte-Brigitte-de-Laval", "Boischatel"
-		].map(name => ({ "@type": "City", "name": name, "addressRegion": "QC", "addressCountry": "CA" })),
+		"areaServed": regionNames.map(name => ({ "@type": "City", "name": name, "addressRegion": "QC", "addressCountry": "CA" })),
 		"hasOfferCatalog": {
 			"@type": "OfferCatalog",
 			"name": "Services d'arbres",
