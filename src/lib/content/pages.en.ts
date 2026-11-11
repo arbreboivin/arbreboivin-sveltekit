@@ -93,8 +93,8 @@ export const servicesPageEn = {
 				'Clean and debris-free worksite',
 				'Available as complement to any service'
 			],
-			image: '/photo/image00007.jpeg',
-			imageAlt: 'Arbre Boivin truck and chipper for branch chipping'
+			image: '/photo/dechiquetage-broyeur.jpg',
+			imageAlt: 'Worker feeding a wood chipper — chips blown into the truck, Arbre Boivin'
 		},
 		{
 			title: 'Land Clearing',

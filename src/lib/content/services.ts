@@ -210,7 +210,7 @@ export const services: ServiceData[] = [
 			description:
 				'Déchiquetage et broyage de branches à Montréal. Transformation des résidus en copeaux réutilisables. Chantier propre et sans débris. Estimation gratuite.'
 		},
-		hero: { image: '/photo/image00007.jpeg', imagePosition: 'left center' },
+		hero: { image: '/photo/dechiquetage-broyeur.jpg', imagePosition: 'center 36%' },
 		intro:
 			"Après un élagage ou un abattage, les branches et résidus peuvent représenter un volume important. Notre service de déchiquetage transforme ces matières en copeaux propres et valorisables.",
 		paragraphs: [
@@ -227,7 +227,7 @@ export const services: ServiceData[] = [
 			'Service autonome sur demande'
 		],
 		gallery: [
-			{ src: '/photo/image00007.jpeg', alt: 'Camion benne et déchiqueteuse verts Arbre Boivin en opération', position: 'left center' }
+			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Arboriste alimentant une déchiqueteuse — copeaux projetés dans le camion', position: 'center 36%' }
 		]
 	},
 	{

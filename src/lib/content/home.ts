@@ -75,7 +75,7 @@ export const homePage = {
 				image: '/photo/haubanage-cable.png',
 				imageAlt: 'Câble de haubanage entre deux troncs — Arbre Boivin',
 				imagePosition: 'center center',
-				imageFit: 'contain',
+				imageFit: 'full-width',
 				href: '/services/haubanage'
 			},
 			{
@@ -97,17 +97,17 @@ export const homePage = {
 			{
 				title: 'Déchiquetage de branches',
 				slug: 'dechiquetage',
-				image: '/photo/dechiquetage-arbreboivin.png',
-				imageAlt: "Déchiquetage de branches — Arbre Boivin, camion et déchiqueteuse",
-				imagePosition: 'center top',
+				image: '/photo/dechiquetage-broyeur.jpg',
+				imageAlt: "Arboriste alimentant une déchiqueteuse — copeaux projetés dans le camion, Arbre Boivin",
+				imagePosition: 'center 36%',
 				href: '/services/dechiquetage'
 			},
 			{
 				title: 'Déboisement et défrichement',
 				slug: 'deboisement',
-				image: '/photo/deboisement-arbreboivin.png',
-				imageAlt: "Déboisement rapide et efficace — Arbre Boivin, excavatrice et équipement",
-				imagePosition: 'center 75%',
+				image: '/photo/deboisement-equipement.jpg',
+				imageAlt: "Excavatrice, déchiqueteuse, camion et bouteur sur un chantier de déboisement — Arbre Boivin",
+				imagePosition: 'center 42%',
 				href: '/services/deboisement'
 			}
 		]

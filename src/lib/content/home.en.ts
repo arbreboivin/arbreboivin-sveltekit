@@ -91,17 +91,17 @@ export const homePageEn = {
 			{
 				title: 'Branch Chipping',
 				slug: 'dechiquetage',
-				image: '/photo/image00007.jpeg',
-				imageAlt: 'Arbre Boivin truck and wood chipper',
-				imagePosition: 'left center',
+				image: '/photo/dechiquetage-broyeur.jpg',
+				imageAlt: 'Worker feeding a wood chipper — chips blown into the truck, Arbre Boivin',
+				imagePosition: 'center 36%',
 				href: '/en/services/dechiquetage'
 			},
 			{
 				title: 'Land Clearing',
 				slug: 'deboisement',
-				image: '/photo/image00002.jpeg',
-				imageAlt: 'Arborist cutting a large trunk in urban area — land clearing',
-				imagePosition: 'center center',
+				image: '/photo/deboisement-equipement.jpg',
+				imageAlt: 'Excavator, chipper, dump truck and bulldozer on a land clearing site — Arbre Boivin',
+				imagePosition: 'center 42%',
 				href: '/en/services/deboisement'
 			}
 		]

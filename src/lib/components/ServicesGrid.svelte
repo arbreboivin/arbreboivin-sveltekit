@@ -19,7 +19,10 @@
 		// Collecter toutes les cartes et leurs images une seule fois
 		const cards = Array.from(sectionEl.querySelectorAll<HTMLElement>('[data-card]'));
 		const pairs: Array<{ card: HTMLElement; img: HTMLImageElement }> = cards
-			.map((card) => ({ card, img: card.querySelector('img') as HTMLImageElement }))
+			.map((card) => ({
+				card,
+				img: card.querySelector('img:not([aria-hidden])') as HTMLImageElement
+			}))
 			.filter((p) => !!p.img);
 
 		if (pairs.length === 0) return;
@@ -78,17 +81,41 @@
 	<div class="px-3 sm:px-5 lg:px-8 max-md:px-4">
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 max-md:gap-4">
 			{#each data.items as service}
+				{@const fit = service.imageFit ?? 'cover'}
 				<a href={service.href} class="group block min-h-[44px]" data-card>
 					<div
-						class="relative h-[280px] overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 max-md:h-[280px] sm:h-[440px] lg:h-[520px] max-md:rounded-xl {service.imageFit === 'contain' ? 'bg-gray-900 dark:bg-slate-900' : ''}"
+						class="relative h-[280px] overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 max-md:h-[280px] sm:h-[440px] lg:h-[520px] max-md:rounded-xl {fit === 'contain' || fit === 'full-width' ? 'bg-[#f0f5f0] dark:bg-slate-800' : ''}"
 					>
-						<img
-							src={service.image}
-							alt={service.imageAlt}
-							class="absolute inset-0 h-full w-full {service.imageFit === 'contain' ? 'object-contain' : 'object-cover'}"
-							loading="lazy"
-							style="will-change: transform; transform: translateZ(0) scale(1); object-position: {service.imagePosition};"
-						/>
+						{#if fit === 'contain' || fit === 'full-width'}
+							<img
+								src={service.image}
+								alt=""
+								aria-hidden="true"
+								class="absolute inset-0 h-full w-full scale-110 object-cover opacity-30 blur-2xl saturate-150 {fit === 'full-width' ? 'object-center' : ''}"
+								style={fit === 'contain' ? `object-position: ${service.imagePosition};` : undefined}
+							/>
+						{/if}
+						{#if fit === 'full-width'}
+							<div class="absolute inset-0 overflow-hidden">
+								<div class="flex h-full w-full items-center justify-center">
+									<img
+										src={service.image}
+										alt={service.imageAlt}
+										class="h-auto w-full max-w-none origin-center"
+										loading="lazy"
+										style="will-change: transform; transform: translateZ(0) scale(1);"
+									/>
+								</div>
+							</div>
+						{:else}
+							<img
+								src={service.image}
+								alt={service.imageAlt}
+								class="absolute inset-0 h-full w-full {fit === 'contain' ? 'object-contain' : 'object-cover'}"
+								loading="lazy"
+								style="will-change: transform; transform: translateZ(0) scale(1); object-position: {service.imagePosition};"
+							/>
+						{/if}
 						<!-- Titre en overlay en bas de l'image -->
 						<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-3 pt-8 max-md:px-4 max-md:pb-3 max-md:pt-6">
 							<h3 class="text-xl font-bold text-white drop-shadow max-md:text-lg">

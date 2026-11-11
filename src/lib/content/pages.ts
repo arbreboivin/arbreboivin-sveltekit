@@ -199,8 +199,8 @@ export const servicesPage = {
 				'Chantier propre et sans débris',
 				'Disponible en complément de tout service'
 			],
-			image: '/photo/image00007.jpeg',
-			imageAlt: 'Camion et broyeur Arbre Boivin pour le déchiquetage de branches'
+			image: '/photo/dechiquetage-broyeur.jpg',
+			imageAlt: 'Arboriste alimentant une déchiqueteuse — copeaux projetés dans le camion, Arbre Boivin'
 		},
 		{
 			title: 'Déboisement / Défrichement',

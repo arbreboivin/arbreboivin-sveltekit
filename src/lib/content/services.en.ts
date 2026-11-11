@@ -190,7 +190,7 @@ export const servicesEn: ServiceData[] = [
 			description:
 				'Branch and wood chipping in the Portneuf region. Transformation of debris into reusable chips. Clean site with no debris. Free estimate.'
 		},
-		hero: { image: '/photo/image00007.jpeg', imagePosition: 'left center' },
+		hero: { image: '/photo/dechiquetage-broyeur.jpg', imagePosition: 'center 36%' },
 		intro:
 			'After pruning or tree removal, branches and debris can represent a significant volume. Our chipping service transforms this material into clean, reusable chips.',
 		paragraphs: [
@@ -207,7 +207,7 @@ export const servicesEn: ServiceData[] = [
 			'Standalone service on request'
 		],
 		gallery: [
-			{ src: '/photo/image00007.jpeg', alt: 'Arbre Boivin dump truck and green wood chipper in operation', position: 'left center' }
+			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Worker feeding a wood chipper — chips blown into the truck', position: 'center 36%' }
 		]
 	},
 	{
