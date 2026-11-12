@@ -89,7 +89,7 @@ const heroPhotoPool: { src: string; position: string }[] = [
 	{ src: '/photo/image00033.jpeg', position: 'center 20%' },
 	{ src: '/photo/image00010.jpeg', position: 'center top' },
 	{ src: '/photo/plantation-arbres.png', position: 'center 40%' },
-	{ src: '/photo/haubanage-cable.png', position: 'center center' },
+	{ src: '/photo/haubanage-bouleaux.jpg', position: 'center center' },
 	{ src: '/photo/essouchement-rognage.png', position: 'center center' },
 	{ src: '/photo/urgence-arbre-maison.png', position: 'center center' },
 	{ src: '/photo/dechiquetage-broyeur.jpg', position: 'center 36%' },
@@ -238,7 +238,7 @@ const sectionTemplates: Omit<RegionSection, 'title' | 'paragraphs' | 'benefits' 
 		serviceHref: '/services/haubanage',
 		ctaLabel: 'Évaluer le haubanage de mon arbre',
 		image: {
-			src: '/photo/haubanage-cable.png',
+			src: '/photo/haubanage-bouleaux.jpg',
 			position: 'center center',
 			altTemplate: 'Haubanage et câblage à {city} — Arbre Boivin'
 		}

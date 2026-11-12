@@ -72,10 +72,9 @@ export const homePage = {
 			{
 				title: 'Haubanage',
 				slug: 'haubanage',
-				image: '/photo/haubanage-cable.png',
-				imageAlt: 'Câble de haubanage entre deux troncs — Arbre Boivin',
+				image: '/photo/haubanage-bouleaux.jpg',
+				imageAlt: 'Câble de haubanage installé entre deux bouleaux — Arbre Boivin',
 				imagePosition: 'center center',
-				imageFit: 'full-width',
 				href: '/services/haubanage'
 			},
 			{
@@ -107,7 +106,7 @@ export const homePage = {
 				slug: 'deboisement',
 				image: '/photo/deboisement-equipement.jpg',
 				imageAlt: "Excavatrice, déchiqueteuse, camion et bouteur sur un chantier de déboisement — Arbre Boivin",
-				imagePosition: 'center 42%',
+				imagePosition: '28% 42%',
 				href: '/services/deboisement'
 			}
 		]

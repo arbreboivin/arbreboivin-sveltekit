@@ -67,8 +67,8 @@ export const homePageEn = {
 			{
 				title: 'Tree Cabling',
 				slug: 'haubanage',
-				image: '/photo/image00005.jpeg',
-				imageAlt: 'Low angle view of a support cable installed in a tree',
+				image: '/photo/haubanage-bouleaux.jpg',
+				imageAlt: 'Support cable installed between two birch trunks — Arbre Boivin',
 				imagePosition: 'center center',
 				href: '/en/services/haubanage'
 			},
@@ -101,7 +101,7 @@ export const homePageEn = {
 				slug: 'deboisement',
 				image: '/photo/deboisement-equipement.jpg',
 				imageAlt: 'Excavator, chipper, dump truck and bulldozer on a land clearing site — Arbre Boivin',
-				imagePosition: 'center 42%',
+				imagePosition: '28% 42%',
 				href: '/en/services/deboisement'
 			}
 		]
