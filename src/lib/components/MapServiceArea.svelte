@@ -37,15 +37,17 @@
 
 		map = L.map(mapContainer).setView([46.83, -71.52], 9);
 
-		// Fond clair type Voyager, sans clé. Esri inverse x/y : {z}/{y}/{x}.
+		// Fond pâle type Voyager, sans clé. Esri inverse x/y : {z}/{y}/{x}.
 		// Les tuiles CARTO (basemaps.cartocdn.com) exigent désormais une clé.
+		const esriAttribution =
+			'Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS User Community';
 		L.tileLayer(
-			'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-			{
-				attribution:
-					'Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Esri, HERE, Garmin, USGS, Intermap, INCREMENT P, NRCan, Esri Japan, METI, Esri China (Hong Kong), Esri Korea, Esri (Thailand), NGCC, &copy; OpenStreetMap contributors, and the GIS User Community',
-				maxZoom: 19
-			}
+			'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+			{ attribution: esriAttribution, maxZoom: 16 }
+		).addTo(map);
+		L.tileLayer(
+			'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+			{ maxZoom: 16 }
 		).addTo(map);
 
 		// Polygone principal : zone de service (vert semi-transparent)
