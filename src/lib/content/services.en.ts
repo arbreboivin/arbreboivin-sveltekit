@@ -218,7 +218,7 @@ export const servicesEn: ServiceData[] = [
 			description:
 				'Land clearing and brush clearing in the Portneuf region. Clearing of wooded land for construction or development. Professional team. Free estimate.'
 		},
-		hero: { image: '/photo/image00002.jpeg', imagePosition: 'center center' },
+		hero: { image: '/photo/deboisement-equipement.jpg', imagePosition: 'center 34%' },
 		intro:
 			'Do you have a wooded plot to clear for a construction or landscaping project? Our team handles complete land clearing, from felling to debris removal.',
 		paragraphs: [

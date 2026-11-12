@@ -238,7 +238,7 @@ export const services: ServiceData[] = [
 			description:
 				'Déboisement et défrichement de terrains à Montréal. Nettoyage de terrains boisés pour construction ou aménagement. Équipe professionnelle. Estimation gratuite.'
 		},
-		hero: { image: '/photo/image00002.jpeg', imagePosition: 'center center' },
+		hero: { image: '/photo/deboisement-equipement.jpg', imagePosition: 'center 34%' },
 		intro:
 			"Vous avez un terrain boisé à nettoyer pour un projet de construction ou d'aménagement? Notre équipe se charge du déboisement complet, de l'abattage à l'évacuation des résidus.",
 		paragraphs: [

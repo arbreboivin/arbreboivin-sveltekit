@@ -34,10 +34,10 @@
 
 		map = L.map(mapContainer).setView([46.82, -71.55], 9);
 
-		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+		// Tuiles OSM standard : gratuites, sans clé API (les tuiles CARTO exigent désormais une clé).
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution:
-				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-			subdomains: 'abcd',
+				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 			maxZoom: 19
 		}).addTo(map);
 
