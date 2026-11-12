@@ -4,6 +4,7 @@
 
 	let { data } = $props();
 	const service = $derived(data.service);
+	const heroStacked = $derived(!!service.heroImage && service.heroLayout === 'stacked');
 
 	const currentIndex = $derived(autresServicesPage.services.findIndex((s) => s.slug === service.slug));
 	const prevService = $derived(currentIndex > 0 ? autresServicesPage.services[currentIndex - 1] : null);
@@ -20,21 +21,41 @@
 </svelte:head>
 
 <!-- ① Hero -->
-<div class="relative bg-gradient-to-br from-[#1a4a1a] to-[#2d6a2d] py-20 md:py-28">
-	<div class="container-site px-4">
-		<nav class="mb-4 flex items-center gap-2 text-xs text-green-300" aria-label="Fil d'Ariane">
-			<a href="/" class="hover:text-white transition-colors">Accueil</a>
-			<span aria-hidden="true">›</span>
-			<a href="/autres-services" class="hover:text-white transition-colors">Autres services</a>
-			<span aria-hidden="true">›</span>
-			<span class="text-white">{service.title}</span>
-		</nav>
-		<div class="flex items-center gap-4">
-			<span class="text-5xl">{service.icon}</span>
-			<h1 class="text-4xl font-black uppercase text-white drop-shadow-lg md:text-5xl lg:text-6xl">
-				{service.title}
-			</h1>
+<div class="relative overflow-hidden bg-gradient-to-br from-[#1a4a1a] to-[#2d6a2d] {heroStacked ? 'py-12 md:py-16' : service.heroImage ? 'py-24 md:py-40' : 'py-20 md:py-28'}">
+	{#if service.heroImage && !heroStacked}
+		<img
+			src={service.heroImage}
+			alt={service.heroImageAlt ?? ''}
+			class="absolute inset-0 h-full w-full object-cover"
+			style:object-position={service.heroImagePosition ?? 'center'}
+			fetchpriority="high"
+		/>
+		<div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25" aria-hidden="true"></div>
+	{/if}
+	<div class="container-site relative px-4 {heroStacked ? 'space-y-8' : ''}">
+		<div>
+			<nav class="mb-4 flex items-center gap-2 text-xs text-green-300" aria-label="Fil d'Ariane">
+				<a href="/" class="hover:text-white transition-colors">Accueil</a>
+				<span aria-hidden="true">›</span>
+				<a href="/autres-services" class="hover:text-white transition-colors">Autres services</a>
+				<span aria-hidden="true">›</span>
+				<span class="text-white">{service.title}</span>
+			</nav>
+			<div class="flex items-center gap-4">
+				<span class="text-5xl">{service.icon}</span>
+				<h1 class="text-4xl font-black uppercase text-white drop-shadow-lg md:text-5xl lg:text-6xl">
+					{service.title}
+				</h1>
+			</div>
 		</div>
+		{#if heroStacked}
+			<img
+				src={service.heroImage}
+				alt={service.heroImageAlt ?? ''}
+				class="h-auto w-full rounded-xl object-contain shadow-2xl ring-1 ring-white/10"
+				fetchpriority="high"
+			/>
+		{/if}
 	</div>
 </div>
 

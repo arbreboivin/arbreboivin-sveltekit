@@ -92,7 +92,7 @@ export const services: ServiceData[] = [
 			description:
 				"Plantation d'arbres professionnelle à Montréal. Conseil sur le choix des essences, plantation selon les règles de l'art. Valorisez votre propriété. Estimation gratuite."
 		},
-		hero: { image: '/photo/image00029.jpeg', imagePosition: 'center center' },
+		hero: { image: '/photo/plantation-arbres.png', imagePosition: 'center 60%' },
 		intro:
 			"Planter un arbre, c'est investir dans la beauté, l'ombre et la valeur de votre propriété pour des décennies. Nous vous accompagnons dans le choix des essences et réalisons la plantation dans les règles de l'art.",
 		paragraphs: [
@@ -109,8 +109,8 @@ export const services: ServiceData[] = [
 			'Suivi post-plantation disponible'
 		],
 		gallery: [
-			{ src: '/photo/image00029.jpeg', alt: 'Vue contre-plongée de grands arbres matures en pleine santé', position: 'center center' },
-			{ src: '/photo/image00009.jpeg', alt: 'Préparation pour travaux arboricoles sur grande propriété', position: 'center center' }
+			{ src: '/photo/plantation-arbres.png', alt: 'Rangée de jeunes arbres en motte prêts à être plantés', position: 'center 60%' },
+			{ src: '/photo/plantation-motte.jpg', alt: 'Jeune arbre en motte à côté de la fosse de plantation fraîchement creusée', position: 'center center' }
 		]
 	},
 	{
@@ -169,7 +169,7 @@ export const services: ServiceData[] = [
 		],
 		gallery: [
 			{ src: '/photo/image00022.jpeg', alt: 'Souches coupées et billes de bois après abattage et essouchement', position: 'center 40%' },
-			{ src: '/photo/image00021.jpeg', alt: 'Deux troncs d\'arbres réduits à des souches dans une cour résidentielle', position: 'center center' }
+			{ src: '/photo/essouchement-rognage.png', alt: 'Essoucheuse broyant une souche au ras du sol', position: 'center center' }
 		]
 	},
 	{
@@ -199,7 +199,7 @@ export const services: ServiceData[] = [
 		gallery: [
 			{ src: '/photo/image00028.jpeg', alt: 'Avant / après — arbre brisé par tempête réparé par Arbre Boivin', position: 'center center' },
 			{ src: '/photo/image00026.jpeg', alt: 'Arborist coupant une branche maîtresse brisée en urgence', position: 'center top' },
-			{ src: '/photo/image00030.jpeg', alt: 'Intervention arboricole d\'urgence — arborist en hauteur', position: 'center center' }
+			{ src: '/photo/urgence-arbre-maison.png', alt: 'Arbre fendu par une tempête et tombé sur une maison', position: 'center center' }
 		]
 	},
 	{
@@ -227,7 +227,9 @@ export const services: ServiceData[] = [
 			'Service autonome sur demande'
 		],
 		gallery: [
-			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Arboriste alimentant une déchiqueteuse — copeaux projetés dans le camion', position: 'center 36%' }
+			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Arboriste alimentant une déchiqueteuse — copeaux projetés dans le camion', position: 'center 36%' },
+			{ src: '/photo/dechiquetage-equipement.jpg', alt: 'Déchiqueteuse et camion à benne Arbre Boivin chargé de branches', position: 'center center' },
+			{ src: '/photo/dechiquetage-collecte-branches.jpg', alt: 'Équipe ramassant un tas de branches pour la déchiqueteuse en bord de rue', position: 'center center' }
 		]
 	},
 	{
@@ -255,8 +257,8 @@ export const services: ServiceData[] = [
 			'Nettoyage et évacuation complète des résidus'
 		],
 		gallery: [
-			{ src: '/photo/image00002.jpeg', alt: 'Arborist sectionnant un grand tronc en milieu urbain résidentiel', position: 'center center' },
-			{ src: '/photo/image00003.jpeg', alt: 'Coupe à la base d\'un tronc — fin de déboisement résidentiel', position: 'center center' }
+			{ src: '/photo/deboisement-equipement.jpg', alt: 'Terrain boisé en cours de défrichement — pelle mécanique, déchiqueteuse, camion et bouteur', position: 'center 60%' },
+			{ src: '/photo/deboisement-chantier.jpg', alt: 'Pelle mécanique à grappin déplaçant des troncs abattus sur un terrain déboisé', position: 'center center' }
 		]
 	}
 ];

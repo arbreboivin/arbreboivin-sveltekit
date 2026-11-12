@@ -72,7 +72,7 @@ export const servicesEn: ServiceData[] = [
 			description:
 				'Professional tree planting in the Portneuf region. Advice on species selection, planting according to best practices. Enhance your property value. Free estimate.'
 		},
-		hero: { image: '/photo/image00029.jpeg', imagePosition: 'center center' },
+		hero: { image: '/photo/plantation-arbres.png', imagePosition: 'center 60%' },
 		intro:
 			'Planting a tree is investing in the beauty, shade and value of your property for decades. We guide you in choosing species and carry out the planting according to best practices.',
 		paragraphs: [
@@ -89,8 +89,8 @@ export const servicesEn: ServiceData[] = [
 			'Post-planting follow-up available'
 		],
 		gallery: [
-			{ src: '/photo/image00029.jpeg', alt: 'Low angle view of large mature trees in full health', position: 'center center' },
-			{ src: '/photo/image00009.jpeg', alt: 'Preparation for arboricultural work on a large property', position: 'center center' }
+			{ src: '/photo/plantation-arbres.png', alt: 'Row of young balled-and-burlapped trees ready for planting', position: 'center 60%' },
+			{ src: '/photo/plantation-motte.jpg', alt: 'Young balled tree next to a freshly dug planting hole', position: 'center center' }
 		]
 	},
 	{
@@ -149,7 +149,7 @@ export const servicesEn: ServiceData[] = [
 		],
 		gallery: [
 			{ src: '/photo/image00022.jpeg', alt: 'Cut stumps and wood logs after tree removal and stump grinding', position: 'center 40%' },
-			{ src: '/photo/image00021.jpeg', alt: 'Two tree trunks reduced to stumps in a residential yard', position: 'center center' }
+			{ src: '/photo/essouchement-rognage.png', alt: 'Stump grinder grinding a stump down to ground level', position: 'center center' }
 		]
 	},
 	{
@@ -179,7 +179,7 @@ export const servicesEn: ServiceData[] = [
 		gallery: [
 			{ src: '/photo/image00028.jpeg', alt: 'Before / after — storm-broken tree repaired by Arbre Boivin', position: 'center center' },
 			{ src: '/photo/image00026.jpeg', alt: 'Arborist cutting a broken main branch in emergency', position: 'center top' },
-			{ src: '/photo/image00030.jpeg', alt: 'Emergency arboricultural intervention — arborist at height', position: 'center center' }
+			{ src: '/photo/urgence-arbre-maison.png', alt: 'Storm-split tree fallen onto a house', position: 'center center' }
 		]
 	},
 	{
@@ -207,7 +207,9 @@ export const servicesEn: ServiceData[] = [
 			'Standalone service on request'
 		],
 		gallery: [
-			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Worker feeding a wood chipper — chips blown into the truck', position: 'center 36%' }
+			{ src: '/photo/dechiquetage-broyeur.jpg', alt: 'Worker feeding a wood chipper — chips blown into the truck', position: 'center 36%' },
+			{ src: '/photo/dechiquetage-equipement.jpg', alt: 'Arbre Boivin wood chipper and dump truck loaded with branches', position: 'center center' },
+			{ src: '/photo/dechiquetage-collecte-branches.jpg', alt: 'Crew gathering a pile of branches for the chipper at the roadside', position: 'center center' }
 		]
 	},
 	{
@@ -235,8 +237,8 @@ export const servicesEn: ServiceData[] = [
 			'Complete cleanup and debris removal'
 		],
 		gallery: [
-			{ src: '/photo/image00002.jpeg', alt: 'Arborist sectioning a large trunk in urban residential area', position: 'center center' },
-			{ src: '/photo/image00003.jpeg', alt: 'Base cut of a trunk — end of residential land clearing', position: 'center center' }
+			{ src: '/photo/deboisement-equipement.jpg', alt: 'Wooded lot being cleared — excavator, wood chipper, dump truck and bulldozer', position: 'center 60%' },
+			{ src: '/photo/deboisement-chantier.jpg', alt: 'Grapple excavator moving felled logs on a cleared lot', position: 'center center' }
 		]
 	}
 ];

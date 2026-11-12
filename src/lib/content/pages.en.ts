@@ -182,6 +182,9 @@ export const autresServicesPageEn = {
 			title: 'Roof Snow Removal',
 			description: 'Safe roof snow removal to prevent damage caused by snow and ice accumulation.',
 			imagePlaceholder: 'Snow removal photo — To be replaced',
+			heroImage: '/photo/deneigement-toiture.jpg',
+			heroImageAlt: 'Three workers shoveling snow off a house roof',
+			heroImagePosition: '68% 5%',
 			seo: {
 				title: 'Roof Snow Removal — Arbre Boivin',
 				description: 'Roof snow removal service in the Portneuf region. Prevention of snow and ice damage. Free estimate.'
@@ -206,6 +209,10 @@ export const autresServicesPageEn = {
 			title: 'Gutter Cleaning',
 			description: 'Complete gutter cleaning to ensure proper rainwater drainage and prevent foundation damage.',
 			imagePlaceholder: 'Gutter photo — To be replaced',
+			heroImage: '/photo/gouttieres-avant-apres.jpg',
+			heroImageAlt: 'Before / after: gutter clogged with leaves on the left, clean gutter on the right',
+			heroImagePosition: 'center',
+			heroLayout: 'stacked',
 			seo: {
 				title: 'Gutter Cleaning — Arbre Boivin',
 				description: 'Gutter cleaning service in the Portneuf region. Prevention of foundation damage. Free estimate.'

@@ -22,9 +22,21 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			{#each autresServicesPageEn.services as service}
 				<div class="rounded-xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-					<div class="aspect-[16/9] bg-green-50 border-b border-dashed border-[#2d6a2d]/20 flex flex-col items-center justify-center p-6 text-center">
-						<span class="text-4xl mb-2">{service.icon}</span>
-					</div>
+					{#if service.heroImage}
+						<div class="aspect-[16/9] overflow-hidden bg-green-50">
+							<img
+								src={service.heroImage}
+								alt={service.heroImageAlt ?? ''}
+								class="h-full w-full object-cover"
+								style:object-position={service.heroImagePosition ?? 'center'}
+								loading="lazy"
+							/>
+						</div>
+					{:else}
+						<div class="aspect-[16/9] bg-green-50 border-b border-dashed border-[#2d6a2d]/20 flex flex-col items-center justify-center p-6 text-center">
+							<span class="text-4xl mb-2">{service.icon}</span>
+						</div>
+					{/if}
 					<div class="p-6">
 						<h2 class="text-xl font-bold text-gray-900 mb-3">{service.title}</h2>
 						<p class="text-sm text-gray-600 leading-relaxed mb-4">{service.description}</p>

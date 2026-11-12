@@ -12,34 +12,41 @@
 	let map: import('leaflet').Map | null = null;
 
 	/**
-	 * Périmètre de la zone de service (Portneuf, Saint-Raymond, Québec et environs).
-	 * Coordonnées [lat, lng] formant un polygone fermé.
+	 * Périmètre anguleux de la zone de service (côtés droits, pas un cercle).
+	 * Ouest jusqu’à Saint-Marc-des-Carrières et Deschambault, nord un peu
+	 * au-dessus de Saint-Raymond puis Valcartier, Lac-Beauport et
+	 * Sainte-Brigitte-de-Laval, est jusqu’à Beaupré et l’Île d’Orléans,
+	 * sud le long du fleuve avant Saint-Henri, Saint-Apollinaire,
+	 * Saint-Lambert-de-Lauzon et Saint-Anselme.
+	 * Coordonnées [lat, lng].
 	 */
 	const serviceAreaPerimeter: [number, number][] = [
-		[46.89, -71.83], // Saint-Raymond (NW)
-		[46.93, -71.62], // Nord
-		[46.98, -71.42], // Stoneham / nord-est
-		[46.88, -71.25], // Québec nord
-		[46.78, -71.2],  // Québec / est
-		[46.7, -71.32],  // Sud-est
-		[46.66, -71.58], // Neuville
-		[46.66, -71.78], // Donnacona / Cap-Santé
-		[46.75, -71.88], // Portneuf
-		[46.89, -71.83]  // fermeture
+		[46.64, -72.15],
+		[46.9, -72.12],
+		[47.01, -71.78],
+		[47.09, -71.2],
+		[47.04, -70.74],
+		[46.74, -71.1],
+		[46.64, -71.7],
+		[46.64, -72.15]
 	];
 
 	onMount(async () => {
 		const L = await import('leaflet');
 		await import('leaflet/dist/leaflet.css');
 
-		map = L.map(mapContainer).setView([46.82, -71.55], 9);
+		map = L.map(mapContainer).setView([46.83, -71.52], 9);
 
-		// Tuiles OSM standard : gratuites, sans clé API (les tuiles CARTO exigent désormais une clé).
-		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution:
-				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-			maxZoom: 19
-		}).addTo(map);
+		// Fond clair type Voyager, sans clé. Esri inverse x/y : {z}/{y}/{x}.
+		// Les tuiles CARTO (basemaps.cartocdn.com) exigent désormais une clé.
+		L.tileLayer(
+			'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+			{
+				attribution:
+					'Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Esri, HERE, Garmin, USGS, Intermap, INCREMENT P, NRCan, Esri Japan, METI, Esri China (Hong Kong), Esri Korea, Esri (Thailand), NGCC, &copy; OpenStreetMap contributors, and the GIS User Community',
+				maxZoom: 19
+			}
+		).addTo(map);
 
 		// Polygone principal : zone de service (vert semi-transparent)
 		const polygon = L.polygon(serviceAreaPerimeter, {

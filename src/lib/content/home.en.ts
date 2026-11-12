@@ -43,7 +43,7 @@ export const homePageEn = {
 			{
 				title: 'Tree Pruning',
 				slug: 'elagage',
-				image: '/photo/image00001.jpeg',
+				image: '/photo/elagage-arboristes.png',
 				imageAlt: 'Certified arborist with chainsaw in a tree',
 				imagePosition: 'center center',
 				href: '/en/services/elagage'
@@ -51,17 +51,17 @@ export const homePageEn = {
 			{
 				title: 'Tree Removal',
 				slug: 'abattage',
-				image: '/photo/image00010.jpeg',
+				image: '/photo/abattage-arboriste.png',
 				imageAlt: 'Arborist at the top of a tree trunk during removal',
-				imagePosition: 'center top',
+				imagePosition: 'center center',
 				href: '/en/services/abattage'
 			},
 			{
 				title: 'Tree Planting',
 				slug: 'plantation',
-				image: '/photo/image00029.jpeg',
+				image: '/photo/plantation-arbres.png',
 				imageAlt: 'Low angle view of large healthy green trees',
-				imagePosition: 'center center',
+				imagePosition: 'center 40%',
 				href: '/en/services/plantation'
 			},
 			{
@@ -75,15 +75,15 @@ export const homePageEn = {
 			{
 				title: 'Stump Grinding',
 				slug: 'essouchement',
-				image: '/photo/image00022.jpeg',
+				image: '/photo/essouchement-rognage.png',
 				imageAlt: 'Stumps and wood logs after stump grinding — Arbre Boivin',
-				imagePosition: 'center 40%',
+				imagePosition: 'center center',
 				href: '/en/services/essouchement'
 			},
 			{
 				title: '24/7 Emergency',
 				slug: 'urgence',
-				image: '/photo/image00028.jpeg',
+				image: '/photo/urgence-arbre-maison.png',
 				imageAlt: 'Before / after storm tree damage repaired by Arbre Boivin',
 				imagePosition: 'center center',
 				href: '/en/services/urgence'

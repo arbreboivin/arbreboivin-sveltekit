@@ -290,6 +290,9 @@ export const autresServicesPage = {
 			title: 'Déneigement de toiture',
 			description: 'Déneigement sécuritaire de votre toiture pour prévenir les dommages liés à l\'accumulation de neige et de glace.',
 			imagePlaceholder: 'Photo déneigement — À remplacer',
+			heroImage: '/photo/deneigement-toiture.jpg',
+			heroImageAlt: 'Trois employés déneigeant le toit d\'une maison',
+			heroImagePosition: '68% 5%',
 			seo: {
 				title: 'Déneigement de toiture — Arbre Boivin',
 				description: 'Service de déneigement de toiture à Montréal. Prévention des dommages causés par la neige et la glace. Estimation gratuite.'
@@ -314,6 +317,10 @@ export const autresServicesPage = {
 			title: 'Nettoyage de gouttières',
 			description: 'Nettoyage complet de vos gouttières pour assurer le bon écoulement des eaux de pluie et prévenir les dommages à votre fondation.',
 			imagePlaceholder: 'Photo gouttières — À remplacer',
+			heroImage: '/photo/gouttieres-avant-apres.jpg',
+			heroImageAlt: 'Avant / après : gouttière remplie de feuilles à gauche, gouttière propre à droite',
+			heroImagePosition: 'center',
+			heroLayout: 'stacked',
 			seo: {
 				title: 'Nettoyage de gouttières — Arbre Boivin',
 				description: 'Service de nettoyage de gouttières à Montréal. Prévention des dommages à la fondation. Estimation gratuite.'
