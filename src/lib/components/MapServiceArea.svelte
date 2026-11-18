@@ -12,45 +12,35 @@
 	let map: import('leaflet').Map | null = null;
 
 	/**
-	 * Périmètre anguleux de la zone de service (côtés droits, pas un cercle).
-	 * Ouest jusqu’à Saint-Marc-des-Carrières et Deschambault, nord un peu
-	 * au-dessus de Saint-Raymond puis Valcartier, Lac-Beauport et
-	 * Sainte-Brigitte-de-Laval, est jusqu’à Beaupré et l’Île d’Orléans,
-	 * sud le long du fleuve avant Saint-Henri, Saint-Apollinaire,
-	 * Saint-Lambert-de-Lauzon et Saint-Anselme.
+	 * Périmètre anguleux de la zone de service.
+	 * Saint-Raymond au nord-ouest, Donnacona au sud-ouest, Québec à l’est.
 	 * Coordonnées [lat, lng].
 	 */
 	const serviceAreaPerimeter: [number, number][] = [
-		[46.64, -72.15],
-		[46.9, -72.12],
-		[47.01, -71.78],
-		[47.09, -71.2],
-		[47.04, -70.74],
-		[46.74, -71.1],
-		[46.64, -71.7],
-		[46.64, -72.15]
+		[46.89, -71.83],
+		[46.93, -71.62],
+		[46.98, -71.42],
+		[46.88, -71.25],
+		[46.78, -71.2],
+		[46.7, -71.32],
+		[46.66, -71.58],
+		[46.66, -71.78],
+		[46.75, -71.88],
+		[46.89, -71.83]
 	];
 
 	onMount(async () => {
 		const L = await import('leaflet');
 		await import('leaflet/dist/leaflet.css');
 
-		map = L.map(mapContainer).setView([46.83, -71.52], 9);
+		map = L.map(mapContainer).setView([46.82, -71.5], 10);
 
-		// Fond pâle type Voyager, sans clé. Esri inverse x/y : {z}/{y}/{x}.
-		// Les tuiles CARTO (basemaps.cartocdn.com) exigent désormais une clé.
-		const esriAttribution =
-			'Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS User Community';
-		L.tileLayer(
-			'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
-			{ attribution: esriAttribution, maxZoom: 16 }
-		).addTo(map);
-		L.tileLayer(
-			'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
-			{ maxZoom: 16 }
-		).addTo(map);
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution:
+				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+			maxZoom: 19
+		}).addTo(map);
 
-		// Polygone principal : zone de service (vert semi-transparent)
 		const polygon = L.polygon(serviceAreaPerimeter, {
 			color: '#1a4a1a',
 			weight: 2,
@@ -58,8 +48,7 @@
 			fillOpacity: 0.35
 		}).addTo(map);
 
-		// Ajuster la vue pour inclure tout le polygone
-		map.fitBounds(polygon.getBounds(), { padding: [20, 20] });
+		map.fitBounds(polygon.getBounds(), { padding: [24, 24] });
 
 		return () => {
 			map?.remove();
